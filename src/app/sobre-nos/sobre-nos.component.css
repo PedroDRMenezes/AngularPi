@@ -1,4 +1,4 @@
-.sobre {
+.descricaoSite {
     text-align: center;
     font-size: 100%;
     margin-top: 2%;
@@ -14,14 +14,14 @@
     color: #39829b;
     font-family: 'Lobster', cursive;
     text-align: center;
-    font-size: 600%;
+    font-size: 305%;
     margin-top: 2%;
     text-shadow: 2px 2px 5px #758582;
 }
 
 p {
-    font-size: 120%;
-    font-family: cursive;
+    font-size: 90%;
+    font-family: 'Noto Sans', sans-serif;
 }
 
 .textApr {
