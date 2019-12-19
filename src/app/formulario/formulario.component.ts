@@ -49,7 +49,7 @@ export class FormularioComponent implements OnInit {
                   console.log('texto');
                 }
                 else{
-                  console.log('Boaaaa caralho');
+                  console.log('Sucesso');
                 }
               }
             }

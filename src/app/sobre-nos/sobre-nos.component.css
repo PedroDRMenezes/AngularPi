@@ -2,6 +2,8 @@
     text-align: center;
     font-size: 100%;
     margin-top: 2%;
+    font-size: 110%;
+    font-family: 'Catamaran', sans-serif;
 }
 
 .card { 
@@ -19,25 +21,15 @@
     text-shadow: 2px 2px 5px #758582;
 }
 
-p {
-    font-size: 90%;
-    font-family: 'Noto Sans', sans-serif;
-}
-
-.textApr {
+.textApresentacao {
     font-size: 80%;
+    font-family: 'Catamaran', sans-serif;
     text-align: start;
 }
 
-#BTn{
-    margin-top: 50px;
-}
-
-.FT{
-    margin-top: 300px;
-}
-
-.fots{
-    width: 105%;
+.fotos {
+    width: 65%;
+    border-radius: 65%;
+    margin-top: 6%;
 }
 
