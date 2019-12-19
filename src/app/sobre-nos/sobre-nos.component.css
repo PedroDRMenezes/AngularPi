@@ -1,0 +1,43 @@
+.sobre {
+    text-align: center;
+    font-size: 100%;
+    margin-top: 2%;
+}
+
+.card { 
+    background-color: #c8b1aa;
+    margin-top: 2%;
+}
+
+.titulo {
+    background-color: fefef4;
+    color: #39829b;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-size: 600%;
+    margin-top: 2%;
+    text-shadow: 2px 2px 5px #758582;
+}
+
+p {
+    font-size: 120%;
+    font-family: cursive;
+}
+
+.textApr {
+    font-size: 80%;
+    text-align: start;
+}
+
+#BTn{
+    margin-top: 50px;
+}
+
+.FT{
+    margin-top: 300px;
+}
+
+.fots{
+    width: 105%;
+}
+
