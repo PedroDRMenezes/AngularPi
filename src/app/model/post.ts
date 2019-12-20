@@ -4,7 +4,8 @@ export class Post {
     private idPostagem: number,
     private titulo: string,
     private texto: string,
-    private linkimg: string
+    private linkimg: string,
+    private dataInclusao:string
     ) {}
 
     public getIdPostagem(): number {
@@ -37,5 +38,11 @@ export class Post {
 
     public setLinkimg(_Linkimg: string): void {
         this.linkimg = _Linkimg;
+    }
+    public getData():string{
+        return this.dataInclusao;
+    }
+    public setData(_dataInclusao:string):void{
+        this.dataInclusao=_dataInclusao;
     }
 }
