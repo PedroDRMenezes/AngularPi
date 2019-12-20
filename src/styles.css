@@ -2,8 +2,12 @@ body{
     background-color: #fefef4;
 }
 
-/* Classe que centraliza qualquer conteúdo */
+/* Classe que centraliza qualquer Div */
 .center{
     display: flex;
     justify-content: center;
+}
+/* Classe que centraliza qualquer Texto */
+.CT{
+    text-align: center;
 }

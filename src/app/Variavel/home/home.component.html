@@ -1,1 +1,96 @@
-<p>home works!</p>
+<div class="row">
+    <!-- Fixo Esquerdo -->
+    <div class="col-md-2 bkb border-right border-buttom border-dark">
+
+    </div>
+
+    <!-- Pagina -->
+    <div class="col-md-8">
+        <!--Imput do user-->
+        <div class="card mt-3">
+            <div class="card-header">
+                Quer compartilhar @USER?
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">No que esta pensando?</h5>
+                <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <a [routerLink]="'#'" class="btn btn-outline-dark mt-2">Postar</a>
+            </div>
+        </div>
+
+        <!--Conteudo-->
+        <div *ngFor="let item of posts">
+            <div class="card mt-3">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-1 P0">
+                            <img class="Imagem border-dark border" src="{{item.texto}}">
+                        </div>
+                        <div class="col-md-10 ">
+                            <h3>@user - {{item.idPostagem}}</h3>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="btn-group">
+                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                </button>
+                                <div class="dropdown-menu size">
+                                    <p>bla</p>
+                                    <p>ble</p>
+                                    <p>bli</p>
+                                    <p>blo</p>
+                                    <p>blu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="row">
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <p class="card-text">{{item.texto}}</p>
+                    </div>
+                    <!--Coments-->
+                    <div class="row">
+                        <p>
+                            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button"
+                                aria-expanded="false" aria-controls="collapseExample">
+                                Link com href
+                            </a>
+                            <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                                Botão com data-target
+                            </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                                squid.
+                                Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+                                proident.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Fixo Direito -->
+    <div class="col-md-2">
+        <div class="card anuncio mt-3">
+            <img class="card-img-top" src="../../../assets/imagens/square.jpg" alt="Imagem de capa do card">
+            <div class="card-body">
+                <h5 class="card-title">Título do card</h5>
+                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o
+                    conteúdo do card.</p>
+                <a [routerLink]="'#'" class="btn btn-outline-dark">Visitar</a>
+            </div>
+        </div>
+    </div>
+</div>
