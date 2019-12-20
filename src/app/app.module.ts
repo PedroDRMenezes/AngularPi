@@ -10,6 +10,8 @@ import { FooterComponent } from './fixo/footer/footer.component';
 import { SobreNosComponent } from './Variavel/sobre-nos/sobre-nos.component';
 import { FormularioComponent } from './Variavel/formulario/formulario.component';
 import { HomeComponent } from './Variavel/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PostagemIdComponent } from './postagem-id/postagem-id.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { HomeComponent } from './Variavel/home/home.component';
     FooterComponent,
     SobreNosComponent,
     FormularioComponent,
-    HomeComponent
+    HomeComponent,
+    PostagemIdComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
