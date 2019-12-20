@@ -10,7 +10,7 @@ import { PublicacoesService } from '../service/publicacoes.service';
 export class PostagemIdComponent implements OnInit {
 
   id: number;
-  post: Post = new Post(0, "", "", "");
+  post: Post = null;
 
   constructor(private PublicacoesService: PublicacoesService) { }
 
