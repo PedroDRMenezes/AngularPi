@@ -3,14 +3,16 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 // Importando componentes
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
-import { FormularioComponent } from './formulario/formulario.component';
+import { SobreNosComponent } from './Variavel/sobre-nos/sobre-nos.component';
+import { FormularioComponent } from './Variavel/formulario/formulario.component';
+import { HomeComponent } from './Variavel/home/home.component';
 
 // Definindo caminhos
 const routes: Routes = [
   {path: " ", redirectTo: "Home", pathMatch: "full"}, // Ainda não criada
   {path: "SobreNos", component: SobreNosComponent},
-  {path: "Formulario", component: FormularioComponent}
+  {path: "Formulario", component: FormularioComponent},
+  {path: "Home", component:HomeComponent}
 ];
 
 @NgModule({

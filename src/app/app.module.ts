@@ -5,10 +5,11 @@ import { FormsModule } from '@angular/forms';
 // Importações dos conteúdos do site 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { FooterComponent } from './footer/footer.component';
-import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
-import { FormularioComponent } from './formulario/formulario.component';
+import { NavBarComponent } from './fixo/nav-bar/nav-bar.component';
+import { FooterComponent } from './fixo/footer/footer.component';
+import { SobreNosComponent } from './Variavel/sobre-nos/sobre-nos.component';
+import { FormularioComponent } from './Variavel/formulario/formulario.component';
+import { HomeComponent } from './Variavel/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormularioComponent } from './formulario/formulario.component';
     NavBarComponent,
     FooterComponent,
     SobreNosComponent,
-    FormularioComponent
+    FormularioComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
