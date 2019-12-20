@@ -1,8 +1,31 @@
 .estilo{
-    background-color: #c8b1aa;
+    background-color: #17a2b8;
     font-family: 'Catamaran', sans-serif;
+    font-size: 17px;
 }
 
 .tm{
     width: 10%;
+}
+#hm{
+    color: white;
+}
+#bi{
+    color: white;
+}
+#sn{
+    color: white;
+}
+#cont{
+    color: white;
+}
+#form{
+    color: white;
+}
+#navbarDropdown{
+    color: white;
+}
+.btn{
+    background-color: #17a2b8;
+    color: white;
 }

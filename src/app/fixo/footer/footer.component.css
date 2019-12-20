@@ -1,8 +1,9 @@
 #rodape {
     text-align: center;
-    background-color: #c8b1aa;
+    background-color: #17a2b8;
     margin-top: 3%;
-    font-size: 70%;
+    font-size: 17px;
     font-family: 'Catamaran', sans-serif;
     height: 0.5%;
+    color: white;
 }
