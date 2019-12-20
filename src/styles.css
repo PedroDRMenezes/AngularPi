@@ -2,6 +2,7 @@ body{
     background-color: #fefef4;
 }
 
+/* Classe que centraliza qualquer conteúdo */
 .center{
     display: flex;
     justify-content: center;

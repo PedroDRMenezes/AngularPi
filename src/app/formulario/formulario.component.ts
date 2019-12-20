@@ -33,7 +33,41 @@ export class FormularioComponent implements OnInit {
       this.erroNome = "Nome Inválido";
     }
     else {
+<<<<<<< HEAD
       this.erroNome = null;
+=======
+      if (this.sobreNome == null) {
+        console.log('sobrenome');
+      }
+      else {
+        if (this.email == null || this.email.indexOf('@') == -1) {
+          console.log('Email');
+        }
+        else {
+          if (this.cidade == null) {
+            console.log('Cidade');
+          }
+          else {
+            if (this.estado == null){
+              console.log('estado');
+            }
+            else{
+              if(this.numero == null || this.numero.length<9){
+                console.log('numero');
+              }
+              else{
+                if(this.texto == null){
+                  console.log('texto');
+                }
+                else{
+                  console.log('Sucesso');
+                }
+              }
+            }
+          }
+        }
+      }
+>>>>>>> 783016567babab76ed502f71591abe1902b901da
     }
 
     if (this.sobreNome == null) {

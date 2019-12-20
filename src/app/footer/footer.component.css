@@ -1,7 +1,8 @@
-#foot {
+#rodape {
     text-align: center;
     background-color: #c8b1aa;
     margin-top: 3%;
     font-size: 70%;
+    font-family: 'Catamaran', sans-serif;
     height: 0.5%;
 }
