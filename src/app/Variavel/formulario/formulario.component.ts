@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-
+  
   private nome: string;
   private sobreNome: string;
   private email: string;
@@ -76,7 +76,7 @@ export class FormularioComponent implements OnInit {
       this.erroEst = null;
       this.valida++
     }
-    if (this.numero == null || this.numero.length < 9) {
+    if (this.numero == null || this.numero.length < 9 || this.numero.length > 11) {
       console.log('numero');
       this.erroNum = "Telefone Inválido";
     }

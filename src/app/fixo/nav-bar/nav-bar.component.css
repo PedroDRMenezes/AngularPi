@@ -29,3 +29,15 @@
     background-color: #17a2b8;
     color: white;
 }
+
+.err {
+    color: red;
+}
+
+.forte {
+    color: green;
+}
+
+.fraca {
+    color: #EEAD2D;
+}

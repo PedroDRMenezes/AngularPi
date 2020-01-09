@@ -25,6 +25,81 @@
             <li class="nav-item">
                 <a class="nav-link" id="form" [routerLink]="'/Formulario'">Formulario</a>
             </li>
+            <li class="nav-item">
+                <!-- Botão para acionar modal -->
+
+                <a class="nav-link" id="form" data-toggle="modal" data-target="#modalExemplo"
+                    [routerLink]="'#'">Cadastrar-se</a>
+            </li>
+            <!-- Modal -->
+            <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cadastro</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault01">Nome completo</label>
+                                    <input type="text" class="form-control" [(ngModel)]="nome"
+                                        [ngModelOptions]="{standalone: true}" placeholder="Nome" required (keyup)="validacao();"><span
+                                        *ngIf='erroNome' class="err">{{erroNome}}</span>
+                                </div>
+                               
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefaultUsername">Email</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="EX: usuario@email.com"
+                                            aria-describedby="inputGroupPrepend2" [(ngModel)]="email"
+                                            [ngModelOptions]="{standalone: true}" required (keyup)="validacao();">
+                                    </div>
+                                    <span *ngIf='erroEmail' class="err">{{erroEmail}}</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-12 mb-3">
+                                    <label for="validationDefault05">Telefone</label>
+                                    <input type="text" class="form-control" [(ngModel)]="numero"
+                                        [ngModelOptions]="{standalone: true}" placeholder="Numero" required (keyup)="validacao();"><span
+                                        *ngIf='erroNum' class="err">{{erroNum}}</span>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault03">Senha</label>
+                                    <input type="password" class="form-control" [(ngModel)]="senha" 
+                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required (keyup)="novaFuncao();" (keyup)="validacao();">                                       
+                                        <span *ngIf='erroSenha' class="err">{{erroSenha}}</span>
+                                        <span *ngIf='senhaForte' class="forte">{{senhaForte}}</span>
+                                        <span *ngIf='senhaFraca' class="fraca">{{senhaFraca}}</span>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="validationDefault04">Confirmar senha</label>
+                                    <input type="password" class="form-control" [(ngModel)]="cSenha"
+                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required (keyup)="validacao();"><span
+                                        *ngIf='erroCSenha' class="err">{{erroCSenha}}</span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)= "validacao2();">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
@@ -42,9 +117,10 @@
         <!-- Barra de Pesquisa -->
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar por Id" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" >Buscar</button>
+            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
         </form>
 
     </div>
-</nav><!--(click)="procurarId()"-->
+</nav>
+<!--(click)="procurarId()"-->
 <!-- [(ngModel)]="id"  -->
