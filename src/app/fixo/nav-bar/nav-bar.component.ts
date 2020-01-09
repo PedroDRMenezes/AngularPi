@@ -23,16 +23,15 @@ export class NavBarComponent implements OnInit {
   private erroSenha: string;
   private erroCSenha: string;
 
-  private valida: number;
+  private valida: number = 0;
 
   ngOnInit() {
   }
 
   validacao() {
 
-    if (this.nome == null) {
+    if (this.nome.length == 0) {
       this.erroNome = "Nome Inválido";
-      this.nome = null;
 
     }
     else {
@@ -53,7 +52,9 @@ export class NavBarComponent implements OnInit {
       this.erroNum = null;
     }
 
-    if (this.senha == null) {
+    if (this.senha == null ) {
+      this.senhaForte = null;
+      this.senhaFraca = null;
       this.erroSenha = "Digite uma senha";
     }
     else {
@@ -71,14 +72,11 @@ export class NavBarComponent implements OnInit {
         this.erroCSenha = null;
       }
     }
-    if (this.senha.length == 0) {
-      this.senhaForte = null;
-      this.senhaFraca = null;
-      this.erroSenha = "Digite uma senha";
-    }
+
   }
 
   novaFuncao() {
+
     if (this.senha != null) {
       if (this.senha.indexOf('&') >= 0  && this.senha.length > 9|| this.senha.indexOf('@') >= 0  && this.senha.length > 9 || this.senha.indexOf('#') >= 0  && this.senha.length > 9 || this.senha.indexOf('%') >= 0  && this.senha.length > 9 || this.senha.indexOf('$') >= 0 && this.senha.length > 9) {
         this.senhaForte = "Senha forte!";
@@ -89,17 +87,20 @@ export class NavBarComponent implements OnInit {
         this.senhaFraca = "Senha fraca!";
         this.senhaForte = null;
       }
+    } else{
+        this.senhaForte = null;
+        this.senhaFraca = null;
+        this.erroSenha = "Digite uma senha";
     }
   }
   validacao2() {
 
     if (this.nome == null) {
       this.erroNome = "Nome Inválido";
-      this.nome = null;
-
     }
     else {
       this.erroNome = null;
+      this.valida++;
     }
 
     if (this.email == null || this.email.indexOf('@' && '.') == -1) {
@@ -108,6 +109,7 @@ export class NavBarComponent implements OnInit {
     }
     else {
       this.erroEmail = null;
+      this.valida++;
     }
 
     if (this.numero == null || this.numero.length < 10 || this.numero.length > 11 || !this.num.test(this.numero)) {
@@ -116,6 +118,7 @@ export class NavBarComponent implements OnInit {
     }
     else {
       this.erroNum = null;
+      this.valida++;
     }
 
     if (this.senha == null) {
@@ -123,6 +126,7 @@ export class NavBarComponent implements OnInit {
     }
     else {
       this.erroSenha = null;
+      this.valida++;
     }
 
     if (this.cSenha == null) {
@@ -134,14 +138,15 @@ export class NavBarComponent implements OnInit {
       }
       else {
         this.erroCSenha = null;
+        this.valida++;
       }
     }
     if (this.senha == null) {
       this.senhaForte = null;
       this.senhaFraca = null;
     }
-    console.log("boaaaaa")
-
+ 
+    if(this.valida==5){
      this.email  = null;
      this.numero = null;
      this.num = null;
@@ -155,7 +160,13 @@ export class NavBarComponent implements OnInit {
      this.erroSenha = null;
      this.nome = null;
      this.erroCSenha = null;
-
+     console.log("boaaaaa")
+    }
+    else{
+      console.log("negativo");
+      console.log(this.valida)
+      this.valida = 0;
+    }
 }
   
 }
