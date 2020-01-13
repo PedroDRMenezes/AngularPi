@@ -47,10 +47,10 @@
                                 <div class="col-md-12 mb-3">
                                     <label for="validationDefault01">Nome completo</label>
                                     <input type="text" class="form-control" [(ngModel)]="nome"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Nome" required (keyup)="validacao();"><span
-                                        *ngIf='erroNome' class="err">{{erroNome}}</span>
+                                        [ngModelOptions]="{standalone: true}" placeholder="Nome" required
+                                        (keyup)="validacao();"><span *ngIf='erroNome' class="err">{{erroNome}}</span>
                                 </div>
-                               
+
                             </div>
                             <div class="form-row">
                                 <div class="col-md-12 mb-3">
@@ -70,31 +70,33 @@
                                 <div class="col-md-12 mb-3">
                                     <label for="validationDefault05">Telefone</label>
                                     <input type="text" class="form-control" [(ngModel)]="numero"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Numero" required (keyup)="validacao();"><span
-                                        *ngIf='erroNum' class="err">{{erroNum}}</span>
+                                        [ngModelOptions]="{standalone: true}" placeholder="Numero" required
+                                        (keyup)="validacao();"><span *ngIf='erroNum' class="err">{{erroNum}}</span>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">Senha</label>
-                                    <input type="password" class="form-control" [(ngModel)]="senha" 
-                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required (keyup)="novaFuncao();" (keyup)="validacao();">                                       
-                                        <span *ngIf='erroSenha' class="err">{{erroSenha}}</span>
-                                        <span *ngIf='senhaForte' class="forte">{{senhaForte}}</span>
-                                        <span *ngIf='senhaFraca' class="fraca">{{senhaFraca}}</span>
+                                    <input type="password" class="form-control" [(ngModel)]="senha"
+                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required
+                                        (keyup)="novaFuncao();" (keyup)="validacao();">
+                                    <span *ngIf='erroSenha' class="err">{{erroSenha}}</span>
+                                    <span *ngIf='senhaForte' class="forte">{{senhaForte}}</span>
+                                    <span *ngIf='senhaFraca' class="fraca">{{senhaFraca}}</span>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationDefault04">Confirmar senha</label>
                                     <input type="password" class="form-control" [(ngModel)]="cSenha"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required (keyup)="validacao();"><span
-                                        *ngIf='erroCSenha' class="err">{{erroCSenha}}</span>
+                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required
+                                        (keyup)="validacao();"><span *ngIf='erroCSenha'
+                                        class="err">{{erroCSenha}}</span>
                                 </div>
-                                
+
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" (click)= "validacao2();">Cadastrar</button>
+                            <button type="button" class="btn btn-primary" (click)="validacao2();">Cadastrar</button>
                         </div>
                     </div>
                 </div>
@@ -116,8 +118,54 @@
 
         <!-- Barra de Pesquisa -->
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar por Id" aria-label="Search">
-            <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Buscar</button>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Login
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                            <img class="Imagem tm" src="../../../assets/imagens/Logo.png">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form class="modal-body">
+
+                            <div class="row form-group" id="emailTexto">
+                                
+                                <div class="col-md-4">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                
+                            </div>
+
+                            <div class="row form-group" id="passwordTexto">
+                                <div class="col-md-4">
+                                    <label for="exampleInputPassword1">Password</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+
+                        </form>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary">Entrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
 
     </div>

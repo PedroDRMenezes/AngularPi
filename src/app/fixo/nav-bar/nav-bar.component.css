@@ -41,3 +41,19 @@
 .fraca {
     color: #EEAD2D;
 }
+
+#exampleInputEmail1 {
+    margin-bottom: 10px;
+}
+
+#emailTexto {
+    margin-left: 20px;
+}
+
+#passwordTexto {
+    margin-left: 20px;
+}
+
+.modal {
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(6, 51, 28));
+}
