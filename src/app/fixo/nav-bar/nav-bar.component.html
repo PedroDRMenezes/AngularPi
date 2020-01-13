@@ -59,7 +59,7 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="EX: usuario@email.com"
+                                        <input type="text" class="form-control" placeholder="ex:usuario@email.com"
                                             aria-describedby="inputGroupPrepend2" [(ngModel)]="email"
                                             [ngModelOptions]="{standalone: true}" required (keyup)="validacao();">
                                     </div>
@@ -70,7 +70,7 @@
                                 <div class="col-md-12 mb-3">
                                     <label for="validationDefault05">Telefone</label>
                                     <input type="text" class="form-control" [(ngModel)]="numero"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Numero" required
+                                        [ngModelOptions]="{standalone: true}" placeholder="Número com DDD" required
                                         (keyup)="validacao();"><span *ngIf='erroNum' class="err">{{erroNum}}</span>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="validationDefault03">Senha</label>
                                     <input type="password" class="form-control" [(ngModel)]="senha"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required
+                                        [ngModelOptions]="{standalone: true}" placeholder="ex:123456789@" required
                                         (keyup)="novaFuncao();" (keyup)="validacao();">
                                     <span *ngIf='erroSenha' class="err">{{erroSenha}}</span>
                                     <span *ngIf='senhaForte' class="forte">{{senhaForte}}</span>
@@ -87,7 +87,7 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="validationDefault04">Confirmar senha</label>
                                     <input type="password" class="form-control" [(ngModel)]="cSenha"
-                                        [ngModelOptions]="{standalone: true}" placeholder="Ex:123456789@" required
+                                        [ngModelOptions]="{standalone: true}" placeholder="" required
                                         (keyup)="validacao();"><span *ngIf='erroCSenha'
                                         class="err">{{erroCSenha}}</span>
                                 </div>
@@ -95,8 +95,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" (click)="validacao2();">Cadastrar</button>
+                            <button type="button" class="btn btn-info" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-info" (click)="validacao2();">Cadastrar</button>
                         </div>
                     </div>
                 </div>
@@ -116,10 +116,9 @@
             </li>
         </ul>
 
-        <!-- Barra de Pesquisa -->
         <form class="form-inline my-2 my-lg-0">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-info text-info corBotao" data-toggle="modal" data-target="#exampleModal">
                 Login
             </button>
 
@@ -129,7 +128,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Entrar no Safe Pet</h5>
                             <img class="Imagem tm" src="../../../assets/imagens/Logo.png">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
@@ -140,28 +139,28 @@
                             <div class="row form-group" id="emailTexto">
                                 
                                 <div class="col-md-4">
-                                    <label for="exampleInputEmail1">Email address</label>
+                                    <label for="exampleInputEmail1">Seu e-mail</label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                        aria-describedby="emailHelp" placeholder="ex: meunome@gmail.com">
                                 </div>
                                 
                             </div>
 
                             <div class="row form-group" id="passwordTexto">
                                 <div class="col-md-4">
-                                    <label for="exampleInputPassword1">Password</label>
+                                    <label for="exampleInputPassword1">Sua senha</label>
                                 </div>
                                 <div class="col-md-8">
                                     <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="Password">
+                                        placeholder="ex: 123456789@">
                                 </div>
                             </div>
 
                         </form>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Entrar</button>
+                            <button type="button" class="btn btn-info">Entrar</button>
                         </div>
                     </div>
                 </div>
@@ -170,5 +169,3 @@
 
     </div>
 </nav>
-<!--(click)="procurarId()"-->
-<!-- [(ngModel)]="id"  -->

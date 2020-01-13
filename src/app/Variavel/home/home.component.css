@@ -8,14 +8,12 @@
 .Imagem{
     border-radius: 65%;
     width: 75%;
+    width: 70px;
+    height: 70px;
 }
 
 .size{
     width: 50%;
-}
-
-#corTopoCard {
-    background-color: ;
 }
 
 .bg-info{
@@ -24,9 +22,17 @@
 .nome{
     color: white;
 }
-#teste{
-    background-color: rgb(188, 236, 245);
+#testeira{
+    background-color: rgb(184, 207, 202);
 }
 #teste2{
     background-color: rgb(188, 236, 245);
+}
+
+.postTexto {
+    margin-left: 10px;
+}
+
+.botao {
+    
 }

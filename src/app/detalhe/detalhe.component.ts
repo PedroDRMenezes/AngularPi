@@ -29,6 +29,7 @@ export class DetalheComponent implements OnInit {
   enviarAlteracoes(){
     this.srv.atualizaUser(this.usuario).subscribe((res)=>{
       console.log("Atualizado com sucesso");
+      alert("Atualizado com sucesso");
     },
     (err)=>{
       alert("Email ja existente")

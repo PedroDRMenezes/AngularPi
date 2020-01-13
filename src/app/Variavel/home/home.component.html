@@ -16,25 +16,25 @@
             <div class="card-body">
                 <h5 class="card-title">No que esta pensando?</h5>
                 <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <a [routerLink]="'#'" class="btn btn-outline-dark mt-2">Postar</a>
+                <a [routerLink]="'#'" class="btn btn-outline-info mt-2">Postar</a>
             </div>
         </div>
 
         <!--Conteudo-->
         <div *ngFor="let item of posts">
             <div class="card mt-3">
-                <div class="card-header " id="teste">
+                <div class="card-header " id="testeira">
                     <div class="row">
                         <div class="col-md-1 P0">
                             <img class="Imagem border-dark border" src="{{item.linkimg}}">
                         </div>
-                        <div class="col-md-10 ">
-                            <h3>@user - {{item.idPostagem}}</h3>
+                        <div class="col-md-10 postTexto">
+                            <h3>@Usuário Id: {{item.idPostagem}}</h3>
                             <h6>{{item.dataInclusao}}</h6>
                         </div>
                         <div class="col-md-1">
                             <div class="btn-group">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                <button class="btn btn-info btn-sm dropdown-toggle botao" type="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 </button>
                                 <div class="dropdown-menu size">
