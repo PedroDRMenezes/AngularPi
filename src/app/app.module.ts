@@ -12,6 +12,8 @@ import { FormularioComponent } from './Variavel/formulario/formulario.component'
 import { HomeComponent } from './Variavel/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostagemIdComponent } from './postagem-id/postagem-id.component';
+import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PostagemIdComponent } from './postagem-id/postagem-id.component';
     SobreNosComponent,
     FormularioComponent,
     HomeComponent,
-    PostagemIdComponent
+    PostagemIdComponent,
+    ConfiguracoesComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,
