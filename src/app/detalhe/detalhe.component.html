@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <!--[ngModelOptions]="{standalone: true}" = Necessario para não dar erro-->
+            <div class="form-group">
+                <label for="exampleInputName1">Nome</label>
+                <input type="text" class="form-control" id="exampleInputName1" placeholder="Nome"
+                    [(ngModel)]="usuario.nome" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Endereço de email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="usuario.email"
+                [ngModelOptions]="{standalone: true}" placeholder="Seu email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputNumber1">Telefone</label>
+                <input type="text" class="form-control" id="exampleInputNumber1" placeholder="Telefone"
+                    [(ngModel)]="usuario.telefone" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha"
+                    [(ngModel)]="usuario.senha" [ngModelOptions]="{standalone: true}">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="enviarAlteracoes();">Enviar</button>
+        </form>
+    </div>
+</div>

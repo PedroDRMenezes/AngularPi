@@ -1,5 +1,5 @@
 .estilo{
-    background-color: #17a2b8;
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(6, 51, 28));
     font-family: 'Catamaran', sans-serif;
     font-size: 17px;
 }
@@ -26,7 +26,7 @@
     color: white;
 }
 .btn{
-    background-color: #17a2b8;
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(6, 51, 28));
     color: white;
 }
 

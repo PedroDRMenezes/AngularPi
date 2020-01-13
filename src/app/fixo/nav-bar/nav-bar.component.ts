@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from 'src/app/model/usuario';
+import { UsuarioService } from 'src/app/service/usuario.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private srv:UsuarioService) { }
+  
+  enviarDados(){
+    console.log(this.usuario)
+    this.srv.adicionaUser(this.usuario).subscribe(
+      res=>{
+        console.log(res)
+        console.log("inserido com sucesso")
+      },
+      err=>{
+        console.log(err)
+        alert("erro ao inserir")
+      }
+      )
+  }
 
   private nome: string;
   private email: string;
@@ -23,13 +39,15 @@ export class NavBarComponent implements OnInit {
   private erroSenha: string;
   private erroCSenha: string;
 
+  public ID: number = 0;
+  public usuario: Usuario = new Usuario();
+
   private valida: number = 0;
 
   ngOnInit() {
   }
 
   validacao() {
-
     if (this.nome.length == 0) {
       this.erroNome = "Nome Inválido";
 
@@ -52,7 +70,7 @@ export class NavBarComponent implements OnInit {
       this.erroNum = null;
     }
 
-    if (this.senha == null ) {
+    if (this.senha == null) {
       this.senhaForte = null;
       this.senhaFraca = null;
       this.erroSenha = "Digite uma senha";
@@ -78,7 +96,7 @@ export class NavBarComponent implements OnInit {
   novaFuncao() {
 
     if (this.senha != null) {
-      if (this.senha.indexOf('&') >= 0  && this.senha.length > 9|| this.senha.indexOf('@') >= 0  && this.senha.length > 9 || this.senha.indexOf('#') >= 0  && this.senha.length > 9 || this.senha.indexOf('%') >= 0  && this.senha.length > 9 || this.senha.indexOf('$') >= 0 && this.senha.length > 9) {
+      if (this.senha.indexOf('&') >= 0 && this.senha.length > 9 || this.senha.indexOf('@') >= 0 && this.senha.length > 9 || this.senha.indexOf('#') >= 0 && this.senha.length > 9 || this.senha.indexOf('%') >= 0 && this.senha.length > 9 || this.senha.indexOf('$') >= 0 && this.senha.length > 9) {
         this.senhaForte = "Senha forte!";
         this.senhaFraca = null;
 
@@ -87,10 +105,10 @@ export class NavBarComponent implements OnInit {
         this.senhaFraca = "Senha fraca!";
         this.senhaForte = null;
       }
-    } else{
-        this.senhaForte = null;
-        this.senhaFraca = null;
-        this.erroSenha = "Digite uma senha";
+    } else {
+      this.senhaForte = null;
+      this.senhaFraca = null;
+      this.erroSenha = "Digite uma senha";
     }
   }
   validacao2() {
@@ -101,6 +119,7 @@ export class NavBarComponent implements OnInit {
     else {
       this.erroNome = null;
       this.valida++;
+     
     }
 
     if (this.email == null || this.email.indexOf('@' && '.') == -1) {
@@ -108,6 +127,7 @@ export class NavBarComponent implements OnInit {
       this.erroEmail = "Email Inválido";
     }
     else {
+     
       this.erroEmail = null;
       this.valida++;
     }
@@ -117,6 +137,7 @@ export class NavBarComponent implements OnInit {
       this.erroNum = "Telefone Inválido";
     }
     else {
+     
       this.erroNum = null;
       this.valida++;
     }
@@ -139,34 +160,43 @@ export class NavBarComponent implements OnInit {
       else {
         this.erroCSenha = null;
         this.valida++;
+      
       }
     }
     if (this.senha == null) {
       this.senhaForte = null;
       this.senhaFraca = null;
     }
- 
-    if(this.valida==5){
-     this.email  = null;
-     this.numero = null;
-     this.num = null;
-     this.senha = null;
-     this.senhaFraca = null;
-     this.senhaForte = null;
-     this.cSenha = null;
-     this.erroNome = null;
-     this.erroEmail = null;
-     this.erroNum = null;
-     this.erroSenha = null;
-     this.nome = null;
-     this.erroCSenha = null;
-     console.log("boaaaaa")
+
+    if (this.valida == 5) {
+      this.usuario.idUsuario = this.ID;
+      this.usuario.nome = this.nome;
+      this.usuario.email = this.email;
+      this.usuario.telefone = this.numero;
+      this.usuario.senha = this.senha;
+      this.ID++
+      this.email = null;
+      this.numero = null;
+      this.num = null;
+      this.senha = null;
+      this.senhaFraca = null;
+      this.senhaForte = null;
+      this.cSenha = null;
+      this.erroNome = null;
+      this.erroEmail = null;
+      this.erroNum = null;
+      this.erroSenha = null;
+      this.nome = null;
+      this.erroCSenha = null;
+      this.valida = 0;
+      console.log("boaaaaa")
+      this.enviarDados();
     }
-    else{
+    else {
       console.log("negativo");
       console.log(this.valida)
       this.valida = 0;
     }
-}
-  
+  }
+
 }
