@@ -1,0 +1,17 @@
+img {
+    width: 100%;
+}
+.row{
+    padding: 0%;
+    margin: 0%;
+}
+.col-md-6{
+    padding: 0px;
+    margin: 0px;
+}
+.bd{
+    margin-top: 15px;
+    height: 645px;
+    border-radius:20px 0px 20px 0px;
+    border:solid 2px rgb(6, 51, 28);
+}

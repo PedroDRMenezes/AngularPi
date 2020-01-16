@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PostagemIdComponent } from './postagem-id/postagem-id.component';
 import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { OpenComponent } from './open/open.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetalheComponent } from './detalhe/detalhe.component';
     HomeComponent,
     PostagemIdComponent,
     ConfiguracoesComponent,
-    DetalheComponent
+    DetalheComponent,
+    OpenComponent
   ],
   imports: [
     BrowserModule,

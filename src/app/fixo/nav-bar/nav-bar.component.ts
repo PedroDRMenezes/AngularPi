@@ -24,6 +24,8 @@ export class NavBarComponent implements OnInit {
       }
       )
   }
+  private emailLogin: string;
+  private senhaLogin: string;
 
   private nome: string;
   private email: string;
@@ -45,6 +47,21 @@ export class NavBarComponent implements OnInit {
   private valida: number = 0;
 
   ngOnInit() {
+  }
+
+  public logar(){
+    this.usuario.email = this.emailLogin;
+    this.usuario.senha = this.senhaLogin;
+
+    this.srv.login(this.usuario).subscribe((res) =>{
+        alert("Login aprovado");
+    },
+    (err)=>{
+      alert("login rejeitado");
+      console.log(this.usuario.senha);
+      console.log(this.usuario.email);
+    })
+
   }
 
   validacao() {
