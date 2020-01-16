@@ -23,16 +23,14 @@
     color: white;
 }
 #testeira{
-    background-color: rgb(184, 207, 202);
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
+    color: white;
 }
 #teste2{
-    background-color: rgb(188, 236, 245);
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
+    color: white;
 }
 
 .postTexto {
     margin-left: 10px;
-}
-
-.botao {
-    
 }

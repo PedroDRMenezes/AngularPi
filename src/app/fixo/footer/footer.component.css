@@ -1,8 +1,9 @@
 #rodape {
     text-align: center;
-    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(6, 51, 28));
-    font-size: 17px;
+    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
+    font-size: 15px;
     font-family: 'Catamaran', sans-serif;
     height: 0.5%;
     color: white;
+    margin-top: 20px;
 }
