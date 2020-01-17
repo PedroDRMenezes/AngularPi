@@ -1,7 +1,17 @@
 <div class="row">
     <!-- Fixo Esquerdo -->
     <div class="col-md-2 bkb border-right border-buttom border-dark">
-
+        <img src="../../../assets/FotosInicio/aguia.jpg" alt="" class="user">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="nomeUser">{{ usuario.nome }}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p class="nomeUser">{{ usuario.email }}</p>
+            </div>
+        </div>
     </div>
 
     <div class="col-md-1"></div>
@@ -25,37 +35,23 @@
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
                     <div class="row">
-                        <div class="col-md-1 P0">
+                        <div class="col-md-2 P0" id="fotoUser">
                             <img class="Imagem border-dark border" src="{{item.linkimg}}">
                         </div>
-                        <div class="col-md-10 postTexto">
+                        <div class="col-md-6 postTexto">
                             <h3>@Usuário Id: {{item.idPostagem}}</h3>
                             <h6>{{item.dataInclusao}}</h6>
                         </div>
-                        <div class="col-md-1">
-                            <div class="btn-group">
-                                <button class="btn btn-info btn-sm dropdown-toggle botao" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                </button>
-                                <div class="dropdown-menu size">
-                                    <p>bla</p>
-                                    <p>ble</p>
-                                    <p>bli</p>
-                                    <p>blo</p>
-                                    <p>blu</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="card-body">
 
-                <div class="card-body">
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <p class="card-text">{{item.texto}}</p>
 
-                    <h5 class="card-title">{{item.titulo}}</h5>
-                    <p class="card-text">{{item.texto}}</p>
-
+                    </div>
                 </div>
-
             </div>
         </div>
 

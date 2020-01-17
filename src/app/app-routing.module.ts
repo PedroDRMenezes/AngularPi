@@ -11,6 +11,7 @@ import { ConfiguracoesComponent } from './configuracoes/configuracoes.component'
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { OpenComponent } from './open/open.component';
 
+
 // Definindo caminhos
 const routes: Routes = [
   {path: "SobreNos", component: SobreNosComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: "BuscaId", component:PostagemIdComponent},
   {path: "config", component:ConfiguracoesComponent},
   {path: 'detalhe/:id',component:DetalheComponent},
-  {path: "", component:OpenComponent}
+  {path: "", component:OpenComponent},
+
 ];
 
 @NgModule({
