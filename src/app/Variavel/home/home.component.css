@@ -37,13 +37,13 @@
 
 .user{
     width: 100%;
-    padding: 10px;
-    border-radius: 100%;
+        border-radius: 100%;
 
 }
 .col-md-2{
-    padding-right: 0px ;
+    padding-right: 0% ;
 }
 .nomeUser{
-    font-size: 25px;
+    font-size: 15px;
+    text-align: center;
 }

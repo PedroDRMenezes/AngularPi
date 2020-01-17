@@ -15,6 +15,7 @@ import { PostagemIdComponent } from './postagem-id/postagem-id.component';
 import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { OpenComponent } from './open/open.component';
+import { CentralAjudaComponent } from './central-ajuda/central-ajuda.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { OpenComponent } from './open/open.component';
     PostagemIdComponent,
     ConfiguracoesComponent,
     DetalheComponent,
-    OpenComponent
+    OpenComponent,
+    CentralAjudaComponent
   ],
   imports: [
     BrowserModule,

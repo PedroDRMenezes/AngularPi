@@ -10,6 +10,7 @@ import { PostagemIdComponent } from './postagem-id/postagem-id.component';
 import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
 import { OpenComponent } from './open/open.component';
+import { CentralAjudaComponent} from './central-ajuda/central-ajuda.component';
 
 
 // Definindo caminhos
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: "config", component:ConfiguracoesComponent},
   {path: 'detalhe/:id',component:DetalheComponent},
   {path: "", component:OpenComponent},
+  {path: "centralAjuda", component: CentralAjudaComponent }
 
 ];
 

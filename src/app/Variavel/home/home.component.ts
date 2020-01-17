@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
     this.usuario = global.USUARIO;
     if (!this.usuario) {
       this.router.navigate(['']);
+      alert("Faça login primeiro")
     }
     else {
       this.encontrarTodos();

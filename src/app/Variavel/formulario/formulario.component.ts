@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { Usuario } from 'src/app/model/usuario';
+import { global } from 'src/app/model/global';
 
 @Component({
   selector: 'app-formulario',
@@ -23,10 +25,19 @@ export class FormularioComponent implements OnInit {
   private erroNum: string;
   private erroMsg: string;
   private valida: number;
-
-  constructor() { }
+  usuario:Usuario;
+  constructor( private router: Router) { }
 
   ngOnInit() {
+    this.usuario = global.USUARIO;
+    if (!this.usuario) {
+      this.router.navigate(['']);
+      alert("Faça login primeiro")
+    }
+    else {
+
+    }
+  
   }
 
   VeriF() {
