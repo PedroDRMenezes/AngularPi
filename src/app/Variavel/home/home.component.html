@@ -1,20 +1,13 @@
 <div class="row">
+    <div class="col-md-2"></div>
     <!-- Fixo Esquerdo -->
-    <div class="col-md-2 bkb border-right border-buttom border-dark">
-        <img src="../../../assets/FotosInicio/aguia.jpg" alt="" class="user">
-        <div class="row">
-            <div class="col-md-12">
-                <p class="nomeUser">{{ usuario.nome }}</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <p class="nomeUser">{{ usuario.email }}</p>
-            </div>
+    <div class="col-md-3 card" style="width: 15rem;">
+        <img class="card-img-top imagemAvatar" src="../../../assets/imagens/Avatar.png" alt="Avatar">
+        <div class="card-body">
+            <p class="card-text nomeUser">{{ usuario.nome }}</p>
+            <p class="nomeUser">{{ usuario.email }}</p>
         </div>
     </div>
-
-    <div class="col-md-1"></div>
 
     <!-- Pagina -->
     <div class="col-md-6">
@@ -36,7 +29,7 @@
                 <div class="card-header " id="testeira">
                     <div class="row">
                         <div class="col-md-2 P0" id="fotoUser">
-                            <img class="Imagem border-dark border" src="{{item.linkimg}}">
+                            <img class="imagemMiniAvatar border-dark border" src="{{item.linkimg}}">
                         </div>
                         <div class="col-md-6 postTexto">
                             <h3>@Usuário Id: {{item.idPostagem}}</h3>
@@ -57,8 +50,6 @@
 
     </div>
 
-    <div class="col-md-1"></div>
-
     <!-- Fixo Direito -->
     <div class="col-md-2">
         <div class="card anuncio mt-3">
@@ -71,4 +62,5 @@
             </div>
         </div>
     </div>
+    <div class="col-md-2"></div>
 </div>

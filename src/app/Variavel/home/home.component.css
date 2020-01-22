@@ -2,14 +2,27 @@
     width: 100%;
 }
 .anuncio{
-    margin: 2%;
+    margin: 20px;
 }
 
-.Imagem{
+.card {
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.imagemAvatar{
     border-radius: 65%;
+    width: 70%;
+    align-content: center;
+    margin-left: 17%;
+    margin-top: 10%;
+}
+
+.imagemMiniAvatar {
+   border-radius: 65%;
     width: 75%;
     width: 70px;
-    height: 70px;
+    height: 70px; 
 }
 
 .size{
@@ -37,7 +50,7 @@
 
 .user{
     width: 100%;
-        border-radius: 100%;
+    border-radius: 100%;
 
 }
 .col-md-2{
