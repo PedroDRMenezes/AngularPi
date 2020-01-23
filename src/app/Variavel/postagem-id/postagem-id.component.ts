@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Post } from '../model/post';
-import { PublicacoesService } from '../service/publicacoes.service';
+import { Post } from '../../model/post';
+import { PublicacoesService } from '../../service/publicacoes.service';
 
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
