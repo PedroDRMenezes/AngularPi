@@ -11,11 +11,11 @@ import { SobreNosComponent } from './Variavel/sobre-nos/sobre-nos.component';
 import { FormularioComponent } from './Variavel/formulario/formulario.component';
 import { HomeComponent } from './Variavel/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PostagemIdComponent } from './postagem-id/postagem-id.component';
-import { ConfiguracoesComponent } from './configuracoes/configuracoes.component';
-import { DetalheComponent } from './detalhe/detalhe.component';
-import { OpenComponent } from './open/open.component';
-import { CentralAjudaComponent } from './central-ajuda/central-ajuda.component';
+import { PostagemIdComponent } from './Variavel/postagem-id/postagem-id.component';
+import { ConfiguracoesComponent } from './Variavel/configuracoes/configuracoes.component';
+import { DetalheComponent } from './Variavel/detalhe/detalhe.component';
+import { OpenComponent } from './Variavel/open/open.component';
+import { CentralAjudaComponent } from './Variavel/central-ajuda/central-ajuda.component';
 
 @NgModule({
   declarations: [

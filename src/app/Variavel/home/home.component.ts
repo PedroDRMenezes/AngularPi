@@ -4,8 +4,6 @@ import { PublicacoesService } from '../../service/publicacoes.service';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { global } from 'src/app/model/global';
-import { UsuarioService } from 'src/app/service/usuario.service';
-
 
 @Component({
   selector: 'app-home',
