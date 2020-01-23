@@ -12,10 +12,11 @@ import { FormularioComponent } from './Variavel/formulario/formulario.component'
 import { HomeComponent } from './Variavel/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostagemIdComponent } from './Variavel/postagem-id/postagem-id.component';
-import { ConfiguracoesComponent } from './Variavel/configuracoes/configuracoes.component';
-import { DetalheComponent } from './Variavel/detalhe/detalhe.component';
-import { OpenComponent } from './Variavel/open/open.component';
-import { CentralAjudaComponent } from './Variavel/central-ajuda/central-ajuda.component';
+import { ConfiguracoesComponent } from './variavel/configuracoes/configuracoes.component';
+import { DetalheComponent } from './variavel/detalhe/detalhe.component';
+import { OpenComponent } from './variavel/open/open.component';
+import { CentralAjudaComponent } from './variavel/central-ajuda/central-ajuda.component';
+
 
 @NgModule({
   declarations: [
