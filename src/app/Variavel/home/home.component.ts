@@ -16,8 +16,13 @@ export class HomeComponent implements OnInit {
   usuario: Usuario;
 
   constructor(private PublicacoesService: PublicacoesService, private router: Router) { }
+  public id:number = 1;
+  public posts: Post[];
+  public p:Post = new Post();
+  
+  public titulo:string;
+  public conteudo:string;
 
-  posts: Post[];
 
   ngOnInit() {
     this.usuario = global.USUARIO;
@@ -30,9 +35,31 @@ export class HomeComponent implements OnInit {
     }
   
   }
+  
   encontrarTodos() {
-    this.PublicacoesService.getAll().subscribe((resposta: Post[]) => {
-      this.posts = resposta;
+    this.PublicacoesService.getAll().subscribe((res: Post[]) => {
+      this.posts = res;
     });
+  }
+  
+  enviarDados() {
+    
+    this.p.id = this.id;
+    this.p.conteudo = this.conteudo;
+    this.p.titulo = this.titulo;
+   
+    console.log(this.p)
+    this.PublicacoesService.adicionaUser(this.p).subscribe(
+      res => {
+        console.log(res)
+        console.log("inserido com sucesso")
+        this.id++;
+        this.encontrarTodos();
+      },
+      err => {
+        console.log(err)
+        alert("erro ao inserir")
+      }
+    )
   }
 }

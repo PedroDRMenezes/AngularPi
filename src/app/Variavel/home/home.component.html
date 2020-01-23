@@ -15,12 +15,16 @@
         <!--Imput do user-->
         <div class="card ">
             <div class="card-header" id="teste2">
-                Quer compartilhar @USER?
+                {{ usuario.nome }} quer compartilhar?
             </div>
             <div class="card-body">
+                <h5 class="card-title">Titulo</h5>
+                <input type="text" class="form-control" aria-label="Exemplo do tamanho do input"
+                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="titulo">
                 <h5 class="card-title">No que esta pensando?</h5>
-                <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <a [routerLink]="'#'" class="btn btn-outline-info mt-2">Postar</a>
+                <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"
+                    [(ngModel)]="conteudo"></textarea>
+                <a (click)="enviarDados();" class="btn btn-outline-info mt-2">Postar</a>
             </div>
         </div>
 
@@ -29,20 +33,25 @@
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
                     <div class="row">
-                        <div class="col-md-2 P0" id="fotoUser">
-                            <img class="imagemMiniAvatar border-dark border" src="{{item.linkimg}}">
-                        </div>
                         <div class="col-md-6 postTexto">
-                            <h3>@Usuário Id: {{item.idPostagem}}</h3>
-                            <h6>{{item.dataInclusao}}</h6>
+                            <h3>@Usuário Id: {{item.id}}</h3>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                        </button>
+                        <div class="dropdown-menu size">
+                            <a>Editar</a>
                         </div>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="card-body">
 
                         <h5 class="card-title">{{item.titulo}}</h5>
-                        <p class="card-text">{{item.texto}}</p>
+                        <p class="card-text">{{item.conteudo}}</p>
 
                     </div>
                 </div>
