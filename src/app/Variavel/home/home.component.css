@@ -1,21 +1,17 @@
 .P0{
     width: 100%;
 }
-.anuncio{
-    margin: 20px;
-}
 
 .card {
-    margin-top: 20px;
-    margin-right: 20px;
+    width: 100%;
+    margin: 30px;
 }
 
 .imagemAvatar{
     border-radius: 65%;
-    width: 70%;
-    align-content: center;
-    margin-left: 17%;
-    margin-top: 10%;
+    width: 100px;
+    width:100%;
+    text-align: center;
 }
 
 .imagemMiniAvatar {
@@ -49,14 +45,22 @@
 }
 
 .user{
-    width: 100%;
-    border-radius: 100%;
+    width: 50%;
+}
 
-}
-.col-md-2{
-    padding-right: 0% ;
-}
 .nomeUser{
     font-size: 15px;
     text-align: center;
 }
+
+.f{
+    padding: 20px;
+}
+.margin{
+    margin-right: 30px;
+    margin-right: 30px;
+}
+
+
+
+
