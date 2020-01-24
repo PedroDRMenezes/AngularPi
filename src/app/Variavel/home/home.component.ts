@@ -19,10 +19,12 @@ export class HomeComponent implements OnInit {
   public id:number = 1;
   public posts: Post[];
   public p:Post = new Post();
-  
+  public show:number = -1;
+
   public titulo:string;
   public conteudo:string;
-
+  public novoTitulo:string;
+  public novoConteudo:string;
 
   ngOnInit() {
     this.usuario = global.USUARIO;
@@ -34,6 +36,12 @@ export class HomeComponent implements OnInit {
       this.encontrarTodos();
     }
   
+  }
+  modal(ida:number){
+    this.show = 1;
+    console.log(ida);
+    this.id = ida;
+
   }
   
   encontrarTodos() {
@@ -54,6 +62,8 @@ export class HomeComponent implements OnInit {
         console.log(res)
         console.log("inserido com sucesso")
         this.id++;
+        this.conteudo = null;
+        this.titulo = null;
         this.encontrarTodos();
       },
       err => {

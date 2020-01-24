@@ -1,0 +1,14 @@
+<div class="card ">
+    <div class="card-header" id="teste2">
+        Editar:
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">Titulo</h5>
+        <input type="text" class="form-control" aria-label="Exemplo do tamanho do input"
+            aria-describedby="inputGroup-sizing-sm" [(ngModel)]="post.titulo">
+        <h5 class="card-title">Conteúdo</h5>
+        <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"
+            [(ngModel)]="post.conteudo"></textarea>
+        <a (click)="atualizaDados();" class="btn btn-outline-info mt-2">Postar</a>
+    </div>
+</div>

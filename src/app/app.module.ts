@@ -16,6 +16,7 @@ import { ConfiguracoesComponent } from './variavel/configuracoes/configuracoes.c
 import { DetalheComponent } from './variavel/detalhe/detalhe.component';
 import { OpenComponent } from './variavel/open/open.component';
 import { CentralAjudaComponent } from './variavel/central-ajuda/central-ajuda.component';
+import { AtualizaPostComponent } from './variavel/atualiza-post/atualiza-post.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CentralAjudaComponent } from './variavel/central-ajuda/central-ajuda.co
     ConfiguracoesComponent,
     DetalheComponent,
     OpenComponent,
-    CentralAjudaComponent
+    CentralAjudaComponent,
+    AtualizaPostComponent
   ],
   imports: [
     BrowserModule,
