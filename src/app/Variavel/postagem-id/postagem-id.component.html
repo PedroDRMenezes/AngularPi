@@ -1,14 +1,30 @@
-<div class="row mt-3">
-    <div class="col-md-1"></div>
-    <div class="col-md-8">
-        <input class="form-control mr-sm-2" type="number" min="1" max="10" placeholder="Pesquisar por Id" aria-label="Search"
-            [(ngModel)]="id">
+<div class="row">
+    <div class="col-md-12">
+        <div class="bg-text">
+            <h1>Safe Pet</h1>
+            <p>A.N.I.+ (ADOÇÃO - NOVIDADE - INOVAÇÃO)</p>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <img class="fotoTopo" src="../../../assets/imagens/dogcat.jfif" alt="Um cão e um gato juntos">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row margem">
+    <div class="col-md-2"></div>
+    <div class="col-md-6 ">
+        <input class="form-control mr-sm-2" type="number" min="1" max="10" placeholder="Pesquisar por Id"
+            aria-label="Search" [(ngModel)]="id">
     </div>
     <div class="col-md-2 center">
-        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" (click)="procurarId();">Buscar</button>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="procurarId();">Buscar</button>
     </div>
-    <div class="col-md-1"></div>
+    <div class="col-md-2"></div>
 </div>
+
 <!--Conteudo-->
 <div *ngIf="post != null">
     <div class="row">
