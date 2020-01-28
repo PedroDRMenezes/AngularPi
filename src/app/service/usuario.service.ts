@@ -8,7 +8,7 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuarioService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   public getUserAll() {
     return this.http.get("http://cloud.professorisidro.com.br:8088/usuario/all")
@@ -18,16 +18,16 @@ export class UsuarioService {
     return this.http.get(`http://cloud.professorisidro.com.br:8088/usuario/${id}`)
   }
 
-  public adicionaUser(usuario:Usuario){
+  public adicionaUser(usuario: Usuario) {
     return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/new", usuario)
   }
 
-  public atualizaUser(usuario:Usuario){
+  public atualizaUser(usuario: Usuario) {
     return this.http.put("http://cloud.professorisidro.com.br:8088/usuario/", usuario)
   }
 
-  public login(usuario: Usuario){
-    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login", usuario);
+  public login(usuario: Usuario) {
+    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login", usuario); //
   }
 
 }
