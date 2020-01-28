@@ -5,52 +5,59 @@
                 <img src="../../assets/imagens/testeira.jpg" class="img-fluid" alt="Responsive image">
             </div>
         </div>
-        <form>
-            <div class="form-row mt-5">
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault01">Nome</label>
-                    <input type="text" class="form-control" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}" placeholder="Nome" required><span *ngIf='erroNome' class="err">{{erroNome}}</span>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefault02">Sobrenome</label>
-                    <input type="text" class="form-control"  [(ngModel)]="sobreNome" [ngModelOptions]="{standalone: true}"
-                    placeholder="Sobrenome" required><span *ngIf='erroS' class="err">{{erroS}}</span>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <label for="validationDefaultUsername">Email</label>
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                        </div>
-                        <input type="text" class="form-control" 
-                            placeholder="EX: usuario@email.com" aria-describedby="inputGroupPrepend2" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" required>
+        <div class="container">
+            <form>
+                <div class="form-row mt-5">
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault01">Nome</label>
+                        <input type="text" class="form-control" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}"
+                            placeholder="Nome" required><span *ngIf='erroNome' class="err">{{erroNome}}</span>
                     </div>
-                    <span *ngIf='erroEmail' class="err">{{erroEmail}}</span>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefault02">Sobrenome</label>
+                        <input type="text" class="form-control" [(ngModel)]="sobreNome"
+                            [ngModelOptions]="{standalone: true}" placeholder="Sobrenome" required><span *ngIf='erroS'
+                            class="err">{{erroS}}</span>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="validationDefaultUsername">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="EX: usuario@email.com"
+                                aria-describedby="inputGroupPrepend2" [(ngModel)]="email"
+                                [ngModelOptions]="{standalone: true}" required>
+                        </div>
+                        <span *ngIf='erroEmail' class="err">{{erroEmail}}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Cidade</label>
-                    <input type="text" class="form-control"  [(ngModel)]="cidade"
-                    [ngModelOptions]="{standalone: true}"
-                    placeholder="Cidade" required><span *ngIf='erroCity' class="err">{{erroCity}}</span>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault03">Cidade</label>
+                        <input type="text" class="form-control" [(ngModel)]="cidade"
+                            [ngModelOptions]="{standalone: true}" placeholder="Cidade" required><span *ngIf='erroCity'
+                            class="err">{{erroCity}}</span>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationDefault04">Estado</label>
+                        <input type="text" class="form-control" [(ngModel)]="estado"
+                            [ngModelOptions]="{standalone: true}" placeholder="Estado" required><span *ngIf='erroEst'
+                            class="err">{{erroEst}}</span>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="validationDefault05">Numero</label>
+                        <input type="text" class="form-control" [(ngModel)]="numero"
+                            [ngModelOptions]="{standalone: true}" placeholder="Numero" required><span *ngIf='erroNum'
+                            class="err">{{erroNum}}</span>
+                    </div>
                 </div>
-                <div class="col-md-3 mb-3">
-                    <label for="validationDefault04">Estado</label>
-                    <input type="text" class="form-control"  [(ngModel)]="estado"
-                    [ngModelOptions]="{standalone: true}"
-                    placeholder="Estado" required><span *ngIf='erroEst' class="err">{{erroEst}}</span>
-                </div>
-                <div class="col-md-3 mb-3">
-                    <label for="validationDefault05">Numero</label>
-                    <input type="text" class="form-control"  [(ngModel)]="numero"
-                    [ngModelOptions]="{standalone: true}"
-                    placeholder="Numero" required><span *ngIf='erroNum' class="err">{{erroNum}}</span>
-                </div>
-            </div>
-            <label for="validationTextarea">Escreva sua mensagem:</label>
-            <textarea class="form-control "  [(ngModel)]="texto" [ngModelOptions]="{standalone: true}" placeholder="Digite aqui..." required></textarea><span *ngIf='erroMsg' class="err">{{erroMsg}}</span><br>
-            <button class="btn btn-outline-dark my-2 mt-2" (click)="VeriF();" id="BTn">Enviar</button>
-        </form>
+                <label for="validationTextarea">Escreva sua mensagem:</label>
+                <textarea class="form-control " [(ngModel)]="texto" [ngModelOptions]="{standalone: true}"
+                    placeholder="Digite aqui..." required></textarea><span *ngIf='erroMsg'
+                    class="err">{{erroMsg}}</span><br>
+                <button class="btn btn-outline-dark my-2 mt-2" (click)="VeriF();" id="BTn">Enviar</button>
+            </form>
+        </div>
     </div>
 </div>

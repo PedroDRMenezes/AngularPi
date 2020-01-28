@@ -3,7 +3,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Router } from '@angular/router';
 import { global } from 'src/app/model/global';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-nav-bar',
@@ -45,6 +45,7 @@ export class NavBarComponent implements OnInit {
   private erroSenha: string;
   private erroCSenha: string;
 
+  public condition: number = 1;
   public ID: number = 0;
   public usuario: Usuario = new Usuario();
   private valida: number = 0;
@@ -59,12 +60,16 @@ export class NavBarComponent implements OnInit {
 
   this.srv.login(this.usuario).subscribe((res:Usuario) => {
     global.USUARIO = res;
+    this.emailLogin = null;
+    this.senhaLogin = null;
+    $('#fechar').click();
     this.router.navigate(['Home']);
-
+    this.condition = 0;
   },
     (err) => {
       alert("login rejeitado");
       this.router.navigate(['']);
+      this.condition = 1;
     })
 }
 
@@ -217,6 +222,11 @@ validacao2() {
     console.log("negativo");
     console.log(this.valida)
     this.valida = 0;
+  }
+}
+keyPress(a :any){
+  if(a.key=="Enter"){
+    this.logar();
   }
 }
 

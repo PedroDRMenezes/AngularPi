@@ -10,27 +10,35 @@
     <!-- Itens do Menu -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" id="hm" [routerLink]="'/Home'">Home <span class="sr-only">(current)</span></a>
-            </li>
+            <div *ngIf="condition == 0">
+                <li class="nav-item">
+                    <a class="nav-link" id="hm" [routerLink]="'/Home'">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </div>
+            <div *ngIf="condition == 0">
+                <li class="nav-item">
+                    <a class="nav-link" id="bi" [routerLink]="'/BuscaId'">BuscaId</a>
+                </li>
+            </div>
             <li class="nav-item">
                 <a class="nav-link" id="cont" [routerLink]="'#'">Contato</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="sn" [routerLink]="'/SobreNos'">Sobre Nós</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" id="bi" [routerLink]="'/BuscaId'">BuscaId</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="form" [routerLink]="'/Formulario'">Formulario</a>
-            </li>
-            <li class="nav-item">
-                <!-- Botão para acionar modal -->
+            <div *ngIf="condition == 0">
+                <li class="nav-item">
+                    <a class="nav-link" id="form" [routerLink]="'/Formulario'">Formulario</a>
+                </li>
+            </div>
+            <div *ngIf="condition == 1">
+                <li class="nav-item">
+                    <!-- Botão para acionar modal -->
 
-                <a class="nav-link" id="form" data-toggle="modal" data-target="#modalExemplo"
-                    [routerLink]="'#'">Cadastrar-se</a>
-            </li>
+                    <a class="nav-link" id="form" data-toggle="modal" data-target="#modalExemplo"
+                        [routerLink]="'#'">Cadastrar-se</a>
+                </li>
+            </div>
             <!-- Modal -->
             <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -104,28 +112,30 @@
             <li class="nav-item">
                 <a class="nav-link" id="bi" [routerLink]="'/centralAjuda'">FAQ</a>
             </li>
+            <div *ngIf="condition == 0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Configurações de cadastro
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" [routerLink]="'/config'">Atualização</a>
 
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    Configurações de cadastro
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" [routerLink]="'/config'">Atualização</a>
-
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" [routerLink]="'#'">Mensagens</a>
-                </div>
-            </li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" [routerLink]="'#'">Mensagens</a>
+                    </div>
+                </li>
+            </div>
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-info text-info corBotao" data-toggle="modal"
-                data-target="#exampleModal">
-                Login
-            </button>
-
+            <div *ngIf="condition == 1">
+                <button type="button" class="btn btn-info text-info corBotao" data-toggle="modal"
+                    data-target="#exampleModal">
+                    Login
+                </button>
+            </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
@@ -134,7 +144,7 @@
                         <div class="modal-header backgroundLogo textoEntrar">
                             <h5 class="modal-title" id="exampleModalLabel">Entrar no Safe Pet</h5>
                             <img class="Imagem logo2" src="../../../assets/imagens/Logo.png">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" id="fechar" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -160,7 +170,7 @@
                                 <div class="col-md-8">
                                     <input type="password" [ngModelOptions]="{standalone: true}"
                                         [(ngModel)]="senhaLogin" class="form-control" id="exampleInputPassword1"
-                                        placeholder="ex: 123456789@">
+                                        (keypress)="keyPress($event)" placeholder="ex: 123456789@">
                                 </div>
                             </div>
 
