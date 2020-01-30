@@ -21,15 +21,141 @@
     text-shadow: 2px 2px 5px #758582;
 }
 
-.textApresentacao {
+/* .textApresentacao {
     font-size: 80%;
     font-family: 'Catamaran', sans-serif;
     text-align: start;
-}
+}  */
 
 .fotos {
-    width: 65%;
+    width: 40%;
     border-radius: 65%;
-    margin-top: 6%;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-left: 120px;
+   
 }
+
+
+/*#ge {
+    margin-top: 10px;
+}
+
+#vic{
+    margin-top: 10px;
+}
+
+#vivi{
+    margin-top: 10px;
+}
+
+#pe{
+    margin-top: 10px;
+}
+
+#thi{
+    margin-top: 10px;
+}*/
+
+
+
+.quemSomos {
+    font-family: 'Catamaran', sans-serif;
+    font-size: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+ 
+
+}
+
+/*p {
+    
+}
+
+#textoVic {
+    margin-top: 25px;
+}
+
+#textoGe {
+    margin-top: 27px;
+}
+
+#textoVivi {
+    margin-top: 30px;
+}
+
+#textoPe {
+    margin-top: 35px;
+}
+
+#textoThi {
+    margin-top: 30px;
+}*/
+
+
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+
+    
+  }
+  
+  .flip-card-front{
+
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+  }
+
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 40%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .text {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color:  #39829b;
+    font-size: 20px;
+    padding: 29px 10px;
+  }
+
+  .flip-card-inner:hover .flip-card-front{
+    opacity: 0.6;
+  }
+  
+  .flip-card-inner:hover .middle {
+    opacity: 1;
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 65%;
+
+  }
+  
+  .flip-card-front {
+    background-color: transparent;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color:transparent;
+   
+    transform: rotateY(180deg);
+  }
+  
 
