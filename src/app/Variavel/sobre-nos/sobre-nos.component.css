@@ -1,17 +1,56 @@
+*{
+  padding: 0%;
+  margin: 0%;
+}
+
+#sobreNos{
+  background-image: linear-gradient(to bottom left, rgba(99, 180, 218, 0.753), rgb(52, 154, 223) );
+  /*background-image: url(../../../assets/imagens/Lovepik_com-400671143-geometric-lines.png);*/
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+  margin-top: 70px;
+  margin-left: 170px;
+}
 .descricaoSite {
     text-align: center;
     font-size: 100%;
     margin-top: 2%;
+    margin-bottom: 10%;
     font-size: 110%;
     font-family: 'Catamaran', sans-serif;
+
+}
+.textosn{
+  margin-left: 30px;
+  color: white;
 }
 
-.card { 
-    background-color: #c8b1aa;
-    margin-top: 2%;
+#slogan {
+  font-size: 35px;
+}
+.tituloSobreNos {
+color: white;
+font-family: 'Lobster', cursive;
+text-align: center;
+font-size: 305%;
+margin-top: 2%;
+
+text-shadow: 2px 2px 5px #39829b;
+width: 700px;
+height: 80px;
+
+position: relative;
+animation: mymove 2s;
+}
+@keyframes mymove {
+  0% {left:0px; color:#39829b; width: 100px;}
+  100% {left: 100px; color: white; width: 480px;}
 }
 
-.titulo {
+.tituloQuemSomos {
     background-color: fefef4;
     color: #39829b;
     font-family: 'Lobster', cursive;
@@ -19,13 +58,16 @@
     font-size: 305%;
     margin-top: 2%;
     text-shadow: 2px 2px 5px #758582;
+    width: 1300px;
+    height: 50px;
+    position: relative;
+    animation: mymoveQuemSomos 2s;
 }
 
-/* .textApresentacao {
-    font-size: 80%;
-    font-family: 'Catamaran', sans-serif;
-    text-align: start;
-}  */
+@keyframes mymoveQuemSomos {
+  0% {left:0px; color:white; width: 100px;}
+  100% {left: 100px; color: #39829b; width: 1150px;}
+}
 
 .fotos {
     width: 40%;
@@ -36,29 +78,6 @@
    
 }
 
-
-/*#ge {
-    margin-top: 10px;
-}
-
-#vic{
-    margin-top: 10px;
-}
-
-#vivi{
-    margin-top: 10px;
-}
-
-#pe{
-    margin-top: 10px;
-}
-
-#thi{
-    margin-top: 10px;
-}*/
-
-
-
 .quemSomos {
     font-family: 'Catamaran', sans-serif;
     font-size: 100%;
@@ -68,38 +87,31 @@
 
 }
 
-/*p {
-    
-}
-
 #textoVic {
-    margin-top: 25px;
+    margin-top: 21px;
 }
 
 #textoGe {
-    margin-top: 27px;
+    margin-top: 29px;
 }
 
 #textoVivi {
-    margin-top: 30px;
+    margin-top: 31px;
 }
 
 #textoPe {
-    margin-top: 35px;
+    margin-top: 38px;
 }
 
 #textoThi {
     margin-top: 30px;
-}*/
-
+}
 
 
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 200px;
-
-    
   }
   
   .flip-card-front{
@@ -111,7 +123,6 @@
     transition: .5s ease;
     backface-visibility: hidden;
   }
-
 
   .middle {
     transition: .5s ease;
@@ -125,7 +136,7 @@
   }
   .text {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color:  #39829b;
+    color: white;
     font-size: 20px;
     padding: 29px 10px;
   }
@@ -159,3 +170,7 @@
   }
   
 
+p {
+  font-size: 16px;
+  margin-top: 20px;
+}

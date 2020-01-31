@@ -1,4 +1,5 @@
 .forest {
+ 
     background-image: url("../../../assets/imagens/forest.jpg");
     width: 100%;
     height: 50%;
@@ -17,7 +18,7 @@
 
 .txt {
     text-align: center;
-    color: orangered;
+    color: rgba(99, 180, 218, 0.753);
     font-size: 70px;
     font-family: 'Lobster', cursive;
     margin-left: 40px;
@@ -42,8 +43,8 @@
   .card-signin {
     border: 0;
     border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem 0 #1b5523;
+  
   }
   
   .card-signin .card-title {
@@ -147,3 +148,10 @@
     color: white;
     background-color: #3b5998;
   }
+
+  .btn-login{
+    color: white;
+    background-color:rgba(95, 193, 238, 0.753);
+  }
+  
+  

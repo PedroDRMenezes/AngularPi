@@ -13,8 +13,10 @@
     color: white;
 }
 
+
 .estilo{
-    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
+   /* background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173)); */
+    background-image: linear-gradient(to bottom right, rgb(52, 154, 223), rgba(99, 180, 218, 0.753));
     font-family: 'Catamaran', sans-serif;
     font-size: 17px;
 }
@@ -40,9 +42,10 @@
 #navbarDropdown{
     color: white;
 }
+
 .btn{
-    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
-    color: white;
+    background-color: white;
+    color: rgba(99, 180, 218, 0.753);
 }
 
 .err {
@@ -74,5 +77,16 @@
 }
 
 .backgroundLogo {
-    background-image: linear-gradient(to bottom right, rgb(62, 227, 233), rgb(13, 109, 173));
+    background-image: linear-gradient(to bottom right, rgb(52, 154, 223), rgba(99, 180, 218, 0.753));
 }
+
+.btn-info {
+    background-color: white; 
+    color: black; 
+    border: 2px solid rgba(95, 193, 238, 0.753);
+  }
+  
+.btn-info:hover {
+    background-color: rgba(95, 193, 238, 0.753);
+    color: white;
+  }
