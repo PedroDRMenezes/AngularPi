@@ -10,19 +10,20 @@ export class PublicacoesService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get("http://localhost:8080/home/todos")
+    return this.http.get("http://localhost:8080/post")
   }
 
   getId(id: number) {
-    return this.http.get(`http://localhost:8080/home/${id}`)
+    return this.http.get(`http://localhost:8080/post/${id}`)
   }
 
-  public adicionaUser(post:Post){
-    return this.http.post("http://localhost:8080/home/new", post)
+  public adicionaPost(post:Post){
+    return this.http.post("http://localhost:8080/post/novo", post)
   }
 
   public atualizaPost(post: Post){
-    return this.http.put("http://localhost:8080/home", post)
+    return this.http.put("http://localhost:8080/post/atualiza", post)
   }
 
 }
+ 

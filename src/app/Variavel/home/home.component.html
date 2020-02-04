@@ -15,12 +15,9 @@
         <!--Imput do user-->
         <div class="card ">
             <div class="card-header" id="teste2">
-                {{ usuario.nome }} quer compartilhar?
+                {{ usuario.nomeUser }} quer compartilhar?
             </div>
             <div class="card-body">
-                <h5 class="card-title">Titulo</h5>
-                <input type="text" class="form-control" aria-label="Exemplo do tamanho do input"
-                    aria-describedby="inputGroup-sizing-sm" [(ngModel)]="titulo">
                 <h5 class="card-title">No que esta pensando?</h5>
                 <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"
                     [(ngModel)]="conteudo"></textarea>
@@ -34,7 +31,7 @@
                 <div class="card-header " id="testeira">
                     <div class="row">
                         <div class="col-md-6 postTexto">
-                            <h3>@Usuário Id: {{item.id}}</h3>
+                            <h3>{{item.postConteudo}}</h3>
                         </div>
                     </div>
                     <div class="btn-group">
@@ -50,8 +47,8 @@
                 <div class="row">
                     <div class="card-body">
 
-                        <h5 class="card-title">{{item.titulo}}</h5>
-                        <p class="card-text">{{item.conteudo}}</p>
+                        
+                        <p class="card-text">{{item.postConteudo}}</p>
 
                     </div>
                 </div>

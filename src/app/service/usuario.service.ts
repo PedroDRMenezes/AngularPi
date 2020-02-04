@@ -11,23 +11,27 @@ export class UsuarioService {
   constructor(private http: HttpClient) { }
 
   public getUserAll() {
-    return this.http.get("http://cloud.professorisidro.com.br:8088/usuario/all")
+    return this.http.get("http://localhost:8080/usuario")
   }
 
   public getUserId(id: number) {
-    return this.http.get(`http://cloud.professorisidro.com.br:8088/usuario/${id}`)
+    return this.http.get(`http://localhost:8080/usuario/${id}`)
   }
 
   public adicionaUser(usuario: Usuario) {
-    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/new", usuario)
+    return this.http.post("http://localhost:8080/usuario/novo", usuario)
   }
 
   public atualizaUser(usuario: Usuario) {
-    return this.http.put("http://cloud.professorisidro.com.br:8088/usuario/", usuario)
+    return this.http.put("http://localhost:8080/usuario/atualiza", usuario)
   }
 
   public login(usuario: Usuario) {
-    return this.http.post("http://cloud.professorisidro.com.br:8088/usuario/login", usuario); //
+    return this.http.post("http://localhost:8080/login", usuario); 
+  }
+
+  public getuserinfo(token: string){
+    return this.http.get("http://localhost:8080/usuario/userinfo?token="+token);
   }
 
 }
