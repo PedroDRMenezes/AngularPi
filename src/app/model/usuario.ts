@@ -6,7 +6,7 @@ import { AnimalAdocao } from './animalAdocao';
 export class Usuario {
     public id: number;
     public nome: string;
-    public nomeDeUser: String;
+    public nomeDeUsuario: String;
     public dataNasc: String;
     public foto:String;
     public email: String;

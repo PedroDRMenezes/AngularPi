@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
 import { global } from 'src/app/model/global';
 import { UsuarioService } from 'src/app/service/usuario.service';
-
+import * as $ from 'jquery';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
   constructor(private PublicacoesService: PublicacoesService, 
               private router: Router, 
               private userService: UsuarioService) { }
+
   public id: number = 1;
   public posts: Post[];
   public p: Post = new Post();
-
+  public usuario: Usuario = new Usuario();
   public show: number = -1;
   public titulo: string;
   public conteudo: string;
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit {
     }
   }
   
-  public usuario: Usuario = new Usuario();
+
   modal(ida: number) {
     this.show = 1;
     console.log(ida);
@@ -67,15 +68,15 @@ export class HomeComponent implements OnInit {
 
   enviarDados() {
     this.p.postConteudo = this.conteudo;
-    this.p.autorPost = global.USUARIO;
-    this.p.autorPost.post = null;
-    this.p.autorPost.comentario = null;
-    this.p.comentarios = null;
-    this.p.postImg = "";
-    this.p.postLike = 0;
-
-
+    this.userService.getUserId(this.usuario.id).subscribe((res:Usuario)=>{
+      console.log("Peguei o usuario")
+      console.log(res)
+      this.p.autorPost = res;
+    });
+    console.log("veio assim")
+    console.log(this.p.autorPost)
     console.log(this.p)
+
     this.PublicacoesService.adicionaPost(this.p).subscribe((res: Post) => {
       console.log(res)
       console.log("inserido com sucesso")
@@ -86,5 +87,12 @@ export class HomeComponent implements OnInit {
         console.log(err)
         alert("erro ao inserir")
       })
+  }
+  
+  atualizaUser(){
+    this.userService.atualizaUser(this.usuario).subscribe((res:Usuario)=>{
+      $("#Fechar").click();
+      alert("atualizado com sucesso")
+    })
   }
 }

@@ -26,6 +26,7 @@ export class PostagemIdComponent implements OnInit {
       alert("Faça login primeiro")
     }
     else {
+      
 
     }
   
