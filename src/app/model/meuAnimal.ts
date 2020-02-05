@@ -10,6 +10,6 @@ export class MeuAnimal {
     public MeuAniNasc: String;
     public MeuAniDetalhes: String;
     public MeuAniFoto: String;
-    public usuario: Usuario;
+    public usuario: Usuario = new Usuario();
 
 }

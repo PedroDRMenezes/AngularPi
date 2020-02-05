@@ -7,5 +7,5 @@ export class Post {
     public postImg: String;
     public postLike: number;
     public comentarios: Comentarios[];
-    public autorPost: Usuario;
+    public autorPost: Usuario = new Usuario();
 }

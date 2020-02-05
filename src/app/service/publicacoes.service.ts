@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../model/post';
+import { NovoPost } from '../model/novoPost';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class PublicacoesService {
     return this.http.get(`http://localhost:8080/post/${id}`)
   }
 
-  public adicionaPost(post:Post){ 
+  public adicionaPost(post:NovoPost){ 
     return this.http.post("http://localhost:8080/post/novo", post)
   }
 

@@ -10,5 +10,5 @@ export class AnimalAdocao {
     public adocaoVacinacao: boolean;
     public adocaoDetalhes: String;
     public adocaoFoto: String;
-    public usuario: Usuario;
+    public usuario: Usuario  = new Usuario();
 }

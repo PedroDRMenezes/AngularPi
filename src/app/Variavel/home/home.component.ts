@@ -6,6 +6,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { global } from 'src/app/model/global';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import * as $ from 'jquery';
+import { NovoPost } from 'src/app/model/novoPost';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -14,11 +15,11 @@ import * as $ from 'jquery';
 })
 export class HomeComponent implements OnInit {
 
- 
 
-  constructor(private PublicacoesService: PublicacoesService, 
-              private router: Router, 
-              private userService: UsuarioService) { }
+
+  constructor(private PublicacoesService: PublicacoesService,
+    private router: Router,
+    private userService: UsuarioService) { }
 
   public id: number = 1;
   public posts: Post[];
@@ -29,6 +30,7 @@ export class HomeComponent implements OnInit {
   public conteudo: string;
   public novoTitulo: string;
   public novoConteudo: string;
+  public novoPost: NovoPost = new NovoPost();
 
   ngOnInit() {
     console.log("Estou na home  ");
@@ -38,21 +40,21 @@ export class HomeComponent implements OnInit {
       alert("Faça login primeiro")
     }
     else {
-      if (!global.USUARIO){
+      if (!global.USUARIO) {
         console.log("tenho token mas nao tenho info de usuario");
         this.userService.getuserinfo(localStorage.getItem('SaFePeT|')).subscribe(
-          (res:Usuario)=>{
-             global.USUARIO = res;
-             this.usuario = global.USUARIO;
-             this.encontrarTodos();
+          (res: Usuario) => {
+            global.USUARIO = res;
+            this.usuario = res;
+            this.encontrarTodos();
           });
-      }else{
+      } else {
         this.usuario = global.USUARIO;
         this.encontrarTodos();
       }
     }
   }
-  
+
 
   modal(ida: number) {
     this.show = 1;
@@ -67,17 +69,12 @@ export class HomeComponent implements OnInit {
   }
 
   enviarDados() {
-    this.p.postConteudo = this.conteudo;
-    this.userService.getUserId(this.usuario.id).subscribe((res:Usuario)=>{
-      console.log("Peguei o usuario")
-      console.log(res)
-      this.p.autorPost = res;
-    });
-    console.log("veio assim")
-    console.log(this.p.autorPost)
-    console.log(this.p)
+    this.novoPost.postConteudo = this.conteudo;
+    this.novoPost.autorPost.id = this.usuario.id;
+    console.log(this.novoPost);
 
-    this.PublicacoesService.adicionaPost(this.p).subscribe((res: Post) => {
+    
+    this.PublicacoesService.adicionaPost(this.novoPost).subscribe((res: Post) => {
       console.log(res)
       console.log("inserido com sucesso")
       this.conteudo = null;
@@ -88,9 +85,9 @@ export class HomeComponent implements OnInit {
         alert("erro ao inserir")
       })
   }
-  
-  atualizaUser(){
-    this.userService.atualizaUser(this.usuario).subscribe((res:Usuario)=>{
+
+  atualizaUser() {
+    this.userService.atualizaUser(this.usuario).subscribe((res: Usuario) => {
       $("#Fechar").click();
       alert("atualizado com sucesso")
     })
