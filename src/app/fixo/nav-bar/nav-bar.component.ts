@@ -14,7 +14,7 @@ import { Token } from 'src/app/model/token';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private srv: UsuarioService, private router: Router) { }
+  constructor(private srv: UsuarioService, private router: Router, private userService: UsuarioService) { }
 
 
   private emailLogin: string;
@@ -26,6 +26,25 @@ export class NavBarComponent implements OnInit {
   private valida: number = 0;
 
   ngOnInit() {
+    console.log("Estou na navBar");
+    console.log(this.usuario);
+    if (!localStorage.getItem("SaFePeT|")) {
+    }
+    else {
+      if (!global.USUARIO) {
+        console.log("tenho token mas nao tenho info de usuario");
+        this.userService.getuserinfo(localStorage.getItem('SaFePeT|')).subscribe(
+          (res: Usuario) => {
+            global.USUARIO = res;
+            this.usuario = global.USUARIO;
+            this.condition = 0;
+          });
+      }
+      else {
+        this.condition = 1;
+      }
+    }
+
   }
 
 
@@ -42,10 +61,9 @@ export class NavBarComponent implements OnInit {
         global.USUARIO = res;
         console.log("usuario logado");
         console.log(global.USUARIO);
-        this.condition = 0;
         $("#fechar").click();
-        this.router.navigate(['/Home']);
-
+        this.condition = 0;
+        this.router.navigate(['/home']);
       });
     },
       (err) => {

@@ -12,27 +12,24 @@
         <ul class="navbar-nav mr-auto">
             <div *ngIf="condition == 0">
                 <li class="nav-item">
-                    <a class="nav-link" id="hm" [routerLink]="'/Home'">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" id="hm" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
                 </li>
             </div>
             <div *ngIf="condition == 0">
                 <li class="nav-item">
-                    <a class="nav-link" id="bi" [routerLink]="'/BuscaId'">BuscaId</a>
+                    <a class="nav-link" id="bi" [routerLink]="'/buscaid'">BuscaId</a>
                 </li>
             </div>
             <li class="nav-item">
-                <a class="nav-link" id="cont" [routerLink]="'#'">Contato</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="sn" [routerLink]="'/SobreNos'">Sobre Nós</a>
+                <a class="nav-link" id="sn" [routerLink]="'/sobrenos'">Sobre Nós</a>
             </li>
             <div *ngIf="condition == 0">
                 <li class="nav-item">
-                    <a class="nav-link" id="form" [routerLink]="'/Formulario'">Formulario</a>
+                    <a class="nav-link" id="form" [routerLink]="'/formulario'">Formulario</a>
                 </li>
             </div>
             <li class="nav-item">
-                <a class="nav-link" id="bi" [routerLink]="'/centralAjuda'">FAQ</a>
+                <a class="nav-link" id="bi" [routerLink]="'/centralajuda'">FAQ</a>
             </li>
             <div *ngIf="condition == 0">
                 <li class="nav-item dropdown">

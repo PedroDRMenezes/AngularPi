@@ -16,15 +16,15 @@ import { AtualizaPostComponent } from './variavel/atualiza-post/atualiza-post.co
 
 // Definindo caminhos
 const routes: Routes = [
-  { path: "SobreNos", component: SobreNosComponent },
-  { path: "Formulario", component: FormularioComponent },
-  { path: "Home", component: HomeComponent },
-  { path: "BuscaId", component: PostagemIdComponent },
+  { path: "sobrenos", component: SobreNosComponent },
+  { path: "formulario", component: FormularioComponent },
+  { path: "home", component: HomeComponent },
+  { path: "buscaid", component: PostagemIdComponent },
   { path: "config", component: ConfiguracoesComponent },
   { path: 'detalhe/:id', component: DetalheComponent },
   { path: "", component: OpenComponent },
-  { path: "centralAjuda", component: CentralAjudaComponent },
-  { path: "Home/ATP/:id", component: AtualizaPostComponent }
+  { path: "centralajuda", component: CentralAjudaComponent },
+  { path: "home/atp/:id", component: AtualizaPostComponent }
 
 ];
 
