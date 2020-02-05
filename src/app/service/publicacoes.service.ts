@@ -17,7 +17,7 @@ export class PublicacoesService {
     return this.http.get(`http://localhost:8080/post/${id}`)
   }
 
-  public adicionaPost(post:Post){
+  public adicionaPost(post:Post){ 
     return this.http.post("http://localhost:8080/post/novo", post)
   }
 

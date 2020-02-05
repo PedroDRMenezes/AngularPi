@@ -23,6 +23,7 @@ export class UsuarioService {
   }
 
   public atualizaUser(usuario: Usuario) {
+    
     return this.http.put("http://localhost:8080/usuario/atualiza", usuario)
   }
 

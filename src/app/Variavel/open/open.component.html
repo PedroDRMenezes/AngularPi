@@ -14,40 +14,55 @@
                 </div>
             </div>
             <div class="card-body smb">
-                <h1 class="card-title text-center">Logar</h1>
-                <form class="form-signin">
-
-                    <div class="row form-group" id="emailTexto">
-
-                        <div class="col-md-4">
-                            <label for="exampleInputEmail1">Seu e-mail</label>
-                        </div>
-                        <div class="col-md-8">
-                            <input type="email" [(ngModel)]="emailLogin" [ngModelOptions]="{standalone: true}"
-                                class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                                placeholder="ex: meunome@gmail.com">
-                        </div>
-
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationDefault01">Nome completo</label>
+                        <input type="text" class="form-control" [(ngModel)]="nome" [ngModelOptions]="{standalone: true}"
+                            placeholder="Nome" required (keyup)="validacao();"><span *ngIf='erroNome'
+                            class="err">{{erroNome}}</span>
                     </div>
 
-                    <div class="row form-group" id="passwordTexto">
-                        <div class="col-md-4">
-                            <label for="exampleInputPassword1">Sua senha</label>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationDefaultUsername">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="ex:usuario@email.com"
+                                aria-describedby="inputGroupPrepend2" [(ngModel)]="email"
+                                [ngModelOptions]="{standalone: true}" required (keyup)="validacao();">
                         </div>
-                        <div class="col-md-8">
-                            <input type="password" [ngModelOptions]="{standalone: true}" [(ngModel)]="senhaLogin"
-                                class="form-control" id="exampleInputPassword1" (keypress)="keyPress($event)"
-                                placeholder="ex: 123456789@">
-                        </div>
+                        <span *ngIf='erroEmail' class="err">{{erroEmail}}</span>
                     </div>
-
-                    <button class="btn btn-lg btn-login btn-block text-uppercase" type="submit">Login</button>
-                    <hr class="my-4">
-                    <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i
-                            class="fab fa-google mr-2"></i> Sign up with Google</button>
-                    <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
-                            class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
-                </form>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <label for="validationDefault05">Telefone</label>
+                        <input type="text" class="form-control" [(ngModel)]="numero"
+                            [ngModelOptions]="{standalone: true}" placeholder="Número com DDD" required
+                            (keyup)="validacao();"><span *ngIf='erroNum' class="err">{{erroNum}}</span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault03">Senha</label>
+                        <input type="password" class="form-control" [(ngModel)]="senha"
+                            [ngModelOptions]="{standalone: true}" placeholder="ex:123456789@" required
+                            (keyup)="novaFuncao();" (keyup)="validacao();">
+                        <span *ngIf='erroSenha' class="err">{{erroSenha}}</span>
+                        <span *ngIf='senhaForte' class="forte">{{senhaForte}}</span>
+                        <span *ngIf='senhaFraca' class="fraca">{{senhaFraca}}</span>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="validationDefault04">Confirmar senha</label>
+                        <input type="password" class="form-control" [(ngModel)]="cSenha"
+                            [ngModelOptions]="{standalone: true}" placeholder="" required (keyup)="validacao();"><span
+                            *ngIf='erroCSenha' class="err">{{erroCSenha}}</span>
+                    </div>
+                    <button type="button" class="btn btn-info" (click)="validacao2();">Cadastrar</button>
+                </div>
             </div>
         </div>
     </div>

@@ -13,8 +13,8 @@ export class Usuario {
     public telefone: String;
     public cep: String;
     public senha:String;
-    public meuAnimal:MeuAnimal;
-    public AniAdocao:AnimalAdocao;
+    public meuAnimal:MeuAnimal[];
+    public AniAdocao:AnimalAdocao[];
     public post: Post[];
     public comentario: Comentarios[]; 
 } 

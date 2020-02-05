@@ -7,7 +7,7 @@ import { global } from 'src/app/model/global';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  templateUrl: './home.component.html', 
   styleUrls: ['./home.component.css'],
   providers: [global]
 })
@@ -56,8 +56,8 @@ export class HomeComponent implements OnInit {
   enviarDados() {
     this.p.postConteudo = this.conteudo;
     this.p.autorPost = global.USUARIO;
-    this.p.autorPost.post=null;
-    this.p.autorPost.comentario=null;
+    this.p.autorPost.post = [];
+    this.p.autorPost.comentario = [];
     this.p.comentarios = null;
     this.p.postImg="";
     this.p.postLike=0;
