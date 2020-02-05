@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from 'src/app/model/usuario';
-import { global } from 'src/app/model/global';
 
 @Component({
   selector: 'app-formulario',
@@ -10,114 +8,51 @@ import { global } from 'src/app/model/global';
 })
 export class FormularioComponent implements OnInit {
   
-  private nome: string;
-  private sobreNome: string;
-  private email: string;
-  private cidade: string;
-  private estado: string;
-  private numero: string;
-  private texto: string;
-  private erroNome: string;
-  private erroS: string;
-  private erroEmail: string;
-  private erroCity: string;
-  private erroEst: string;
-  private erroNum: string;
-  private erroMsg: string;
-  private valida: number;
-  usuario:Usuario;
-  constructor( private router: Router) { }
+  private tipo: string;
+  private porte: string;
+  private local: string;
+  private detalhes: string;
+  private erroTipo: string;
+  private erroPorte: string;
+  private erroLocal: string;
+  private erroDetalhes: string;
+  private cont: number;
+  constructor() { }
 
   ngOnInit() {
-    this.usuario = global.USUARIO;
-    if (!this.usuario) {
-      this.router.navigate(['']);
-      alert("Faça login primeiro")
-    }
-    else {
-
-    }
-  
   }
-
-  VeriF() {
-    if (this.nome == null) {
-      console.log('nome');
-      this.erroNome = "Nome Inválido";
-      this.nome = null;
-
+  valida(){
+    if(this.tipo==null){
+      this.erroTipo = "Tipo Inválido";
+      this.tipo = null;
+      this.cont++;
     }
-    else {
-      this.erroNome = null;
-      this.valida++
+    else{
+      this.erroTipo = null;
     }
-
-    if (this.sobreNome == null) {
-      this.erroS = "Sobrenome Inválido";
-
-      console.log('sobrenome');
+    if(this.porte==null){
+      this.erroPorte = "Porte Inválido";
+      this.porte = null;
+      this.cont++;
     }
-    else {
-      this.erroS = null;
-      this.valida++
+    else{
+      this.erroPorte = null;
     }
-
-    if (this.email == null || this.email.indexOf('@') == -1) {
-      console.log('Email');
-      this.erroEmail = "Email Inválido";
+    if(this.local==null){
+      this.erroLocal = "Local Inválido";
+      this.local = null;
+      this.cont++;
     }
-    else {
-      this.erroEmail = null;
-      this.valida++
+    else{
+      this.erroLocal = null;
     }
-    if (this.cidade == null) {
-      console.log('Cidade');
-      this.erroCity = "Cidade Inválida";
+    if(this.detalhes==null){
+      this.erroDetalhes = "Detalhe Inválido";
+      this.detalhes = null;
+      this.cont++;
     }
-    else {
-      this.erroCity = null;
-      this.valida++
+    else{
+      this.erroDetalhes = null;
     }
-
-    if (this.estado == null) {
-      console.log('estado');
-      this.erroEst = "Estado Inválido";
-    }
-    else {
-      this.erroEst = null;
-      this.valida++
-    }
-    if (this.numero == null || this.numero.length < 9 || this.numero.length > 11) {
-      console.log('numero');
-      this.erroNum = "Telefone Inválido";
-    }
-    else {
-      this.erroNum = null;
-      this.valida++
-    }
-    if (this.texto == null) {
-      console.log('texto');
-      this.erroMsg = "Campo obrigatório";
-    }
-    else {
-      this.erroMsg = null;
-      this.valida++
-    }
-    if (this.valida == 7) {
-      console.log("boaaaa");
-      this.nome = null;
-      this.sobreNome = null;
-      this.email = null;
-      this.cidade = null;
-      this.estado = null;
-      this.numero = null;
-      this.texto = null;
-      this.valida = 0;
-
-    }
-    else {
-      this.valida = 0;
-    }
-
   }
 }

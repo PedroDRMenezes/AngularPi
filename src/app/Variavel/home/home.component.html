@@ -8,7 +8,7 @@
                 <p class="nomeUser">{{ usuario.email }}</p>
 
                 <!-- Botão modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalExemplo">
                     atualizar
                 </button>
 
@@ -102,13 +102,13 @@
         <!--Imput do user-->
         <div class="card ">
             <div class="card-header" id="teste2">
-                {{ usuario.nomeUser }} quer compartilhar?
+                {{ usuario.nome }} quer compartilhar?
             </div>
             <div class="card-body">
                 <h5 class="card-title">No que esta pensando?</h5>
                 <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"
                     [(ngModel)]="conteudo"></textarea>
-                <a (click)="enviarDados();" class="btn btn-outline-info mt-2">Postar</a>
+                <button class="btn btn-info mt-2 " (click)="enviarDados();" >Postar</button>
             </div>
         </div>
 
@@ -117,18 +117,17 @@
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
                     <div class="row">
-                        <div class="col-md-6 postTexto">
-                            <h3>{{item.postConteudo}}</h3>
-                        </div>
-                    </div>
-                    <div class="btn-group">
-                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
+                        <div class="col-md-12 postTexto btn-group">
+                            <h3>{{usuario.nome}}</h3>
+                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                         </button>
                         <div class="dropdown-menu size">
                             <a [routerLink]="['ATP',item.id]">Editar</a>
                         </div>
+                        </div>
                     </div>
+                   
                 </div>
 
                 <div class="row">

@@ -1,3 +1,9 @@
+
+#canvas-wrapper.dark-mode {
+    background: #222;
+    color: #DDD;
+  }
+
 .P0{
     width: 100%;
 }
@@ -32,11 +38,11 @@
     color: white;
 }
 #testeira{
-    background-color: rgba(23, 163, 184, 0.767);
+    background-image: linear-gradient(to bottom right, rgb(52, 154, 223), rgba(99, 180, 218, 0.753));
     color: white;
 }
 #teste2{
-    background-color: rgba(23, 163, 184, 0.767);
+    background-image: linear-gradient(to bottom right, rgb(52, 154, 223), rgba(99, 180, 218, 0.753));
     color: white;
 }
 
@@ -61,6 +67,38 @@
     margin-right: 30px;
 }
 
+.btn-info {
+    background-color: white; 
+    color: rgba(95, 193, 238, 0.753);
+    border: 2px solid rgba(95, 193, 238, 0.753);
+  }
+  
+.btn-info:hover {
+    background-color: rgba(95, 193, 238, 0.753);
+    color: white;
+  }
+  .btn{
+    background-color: white; 
+    color: rgba(95, 193, 238, 0.753);
+    border: 2px solid rgba(95, 193, 238, 0.753);
+  }
+  .btn:hover {
+    background-color: rgba(95, 193, 238, 0.753);
+    color: white;
+  }
+.gf{
+    background-color: white; 
+    color: rgba(95, 193, 238, 0.753);
+    border: 2px solid rgba(95, 193, 238, 0.753);
+}
 
-
-
+.gf:hover {
+    background-color: rgba(95, 193, 238, 0.753);
+    color: white;
+}
+.dropdown-toggle{
+    margin-left: 350px;
+}
+.dropdown-menu {
+    width: 5px;
+}

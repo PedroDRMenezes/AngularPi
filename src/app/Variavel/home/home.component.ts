@@ -15,8 +15,6 @@ import { NovoPost } from 'src/app/model/novoPost';
 })
 export class HomeComponent implements OnInit {
 
-
-
   constructor(private PublicacoesService: PublicacoesService,
     private router: Router,
     private userService: UsuarioService) { }
@@ -54,7 +52,7 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
+ 
 
   modal(ida: number) {
     this.show = 1;
