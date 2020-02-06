@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     private meuAniService: MeuAniService) { }
 
   public id: number = 1;
-  public posts: Post[];
+  public posts: Post[] = [];
   public p: Post = new Post();
   public usuario: Usuario = new Usuario();
   public meuAnimal: MeuAnimal = new MeuAnimal();
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
   public novoTitulo: string;
   public novoConteudo: string;
   public novoPost: NovoPost = new NovoPost();
-  public troca:boolean = true;
+  public troca: boolean = true;
 
   ngOnInit() {
     console.log("Estou na home  ");
@@ -66,7 +66,7 @@ export class HomeComponent implements OnInit {
       }
     }
   }
- 
+
 
   modal(ida: number) {
     this.show = 1;
@@ -101,6 +101,11 @@ export class HomeComponent implements OnInit {
     this.userService.atualizaUser(this.usuario).subscribe((res: Usuario) => {
       $("#Fechar").click();
       alert("atualizado com sucesso")
+      //window.location.reload();
+      console.log(res);
+      console.log("usuario atualizado... recarregando posts");
+      this.encontrarTodos();
+      console.log("posts atualizados");
     })
   }
 
@@ -128,14 +133,15 @@ export class HomeComponent implements OnInit {
       alert("Novo animal inserido com sucesso!");
       console.log("Veio pro banco o animalllllll")
       console.log(res)
+
     })
   }
 
-  atualiza(){
+  atualiza() {
     this.troca = true;
   }
 
-  adiciona(){
+  adiciona() {
     this.troca = false;
   }
 

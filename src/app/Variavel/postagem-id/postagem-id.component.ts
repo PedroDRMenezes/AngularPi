@@ -36,11 +36,11 @@ export class PostagemIdComponent implements OnInit {
             global.USUARIO = res;
             this.usuario = res;
             this.encontraMeusPost();
+            
           });
       } else {
         console.log("tenho token e Usuario");
         this.usuario = global.USUARIO;
-        window.location.reload();
         this.encontraMeusPost();
       }
     }

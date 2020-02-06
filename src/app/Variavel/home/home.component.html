@@ -2,7 +2,7 @@
     <!-- Fixo Esquerdo -->
     <div class="col-md-3">
         <div class="card f">
-            <img class="card-img-top imagemAvatar rounded" src="../../../assets/imagens/Avatar.png" alt="Avatar">
+            <img class="card-img-top imagemAvatar rounded" src="{{ usuario.foto }}" alt="Avatar">
             <div class="card-body">
                 <p class="card-text nomeUser">{{ usuario.nome }}</p>
                 <p class="nomeUser">{{ usuario.email }}</p>
@@ -32,8 +32,8 @@
                                     <div class="form-row">
                                         <div class="col-md-12 mb-3">
                                             <label for="validationDefault01">Nome completo</label>
-                                            <input type="text" class="form-control" [(ngModel)]="this.usuario.nome"
-                                                [ngModelOptions]="{standalone: true}" placeholder="this.usuario.nome"
+                                            <input type="text" class="form-control" [(ngModel)]="usuario.nome"
+                                                [ngModelOptions]="{standalone: true}" placeholder="usuario.nome"
                                                 required>
                                         </div>
                                     </div>
@@ -196,12 +196,14 @@
         </div>
 
         <!--Conteudo-->
+
+   
         <div *ngFor="let item of posts">
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
                     <div class="row">
                         <div class="col-md-12 postTexto btn-group">
-                            <h3>{{item.autorPost.nome}}</h3>
+                            <h3>{{ item.autorPost.nome }}</h3>
                         </div>
                     </div>
                 </div>
