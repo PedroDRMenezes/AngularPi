@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { global } from 'src/app/model/global';
 import * as $ from 'jquery';
 import { Token } from 'src/app/model/token';
-
+ 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
@@ -70,6 +70,12 @@ export class NavBarComponent implements OnInit {
         alert("erro")
         this.condition = 1;
       })
+  }
+
+  logout(){
+    localStorage.removeItem("SaFePeT|");
+    this.condition = 1;
+    this.router.navigate(['']);
   }
 
   keyPress(a: any) {

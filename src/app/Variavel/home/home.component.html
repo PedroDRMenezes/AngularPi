@@ -2,7 +2,7 @@
     <!-- Fixo Esquerdo -->
     <div class="col-md-3">
         <div class="card f">
-            <img class="card-img-top imagemAvatar rounded" src="../../../assets/imagens/Avatar.png" alt="Avatar">
+            <img class="card-img-top imagemAvatar rounded" src="{{ usuario.foto }}" alt="Avatar">
             <div class="card-body">
                 <p class="card-text nomeUser">{{ usuario.nome }}</p>
                 <p class="nomeUser">{{ usuario.email }}</p>
@@ -18,76 +18,159 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Atualizar Cadastro</h5>
+                                <button type="button" class="btn btn-secondary" (click)="atualiza();">Atualizar
+                                    Cadastro</button>
+                                <button type="button" class="btn btn-secondary" (click)="adiciona();">Adicionar
+                                    Animal</button>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                     <span aria-hidden="true" id="Fechar">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="validationDefault01">Nome completo</label>
-                                        <input type="text" class="form-control" [(ngModel)]="this.usuario.nome"
-                                            [ngModelOptions]="{standalone: true}" placeholder="this.usuario.nome"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefaultUsername">Email</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="ex:usuario@email.com"
-                                                aria-describedby="inputGroupPrepend2" [(ngModel)]="this.usuario.email"
-                                                [ngModelOptions]="{standalone: true}" required>
+
+                                <div *ngIf="troca == true">
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault01">Nome completo</label>
+                                            <input type="text" class="form-control" [(ngModel)]="usuario.nome"
+                                                [ngModelOptions]="{standalone: true}" placeholder="usuario.nome"
+                                                required>
                                         </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault01">Nome de Usuário</label>
-                                        <input type="text" class="form-control" [(ngModel)]="this.usuario.nomeDeUsuario"
-                                            [ngModelOptions]="{standalone: true}" placeholder="Nome de usuário"
-                                            required>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefaultUsername">Email</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                </div>
+                                                <input type="text" class="form-control"
+                                                    placeholder="ex:usuario@email.com"
+                                                    aria-describedby="inputGroupPrepend2"
+                                                    [(ngModel)]="this.usuario.email"
+                                                    [ngModelOptions]="{standalone: true}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault01">Nome de Usuário</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="this.usuario.nomeDeUsuario"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Nome de usuário"
+                                                required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label for="validationDefault05">Telefone</label>
-                                        <input type="text" class="form-control" [(ngModel)]="this.usuario.telefone"
-                                            [ngModelOptions]="{standalone: true}" placeholder="Número com DDD" required>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault05">Telefone</label>
+                                            <input type="text" class="form-control" [(ngModel)]="this.usuario.telefone"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Número com DDD"
+                                                required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault03">Data de Nascimento</label>
-                                        <input type="text" class="form-control" [(ngModel)]="this.usuario.dataNasc"
-                                            [ngModelOptions]="{standalone: true}" placeholder="00/00/0000" required>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Data de Nascimento</label>
+                                            <input type="text" class="form-control" [(ngModel)]="this.usuario.dataNasc"
+                                                [ngModelOptions]="{standalone: true}" placeholder="00/00/0000" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">CEP</label>
+                                            <input type="text" class="form-control" [(ngModel)]="this.usuario.cep"
+                                                [ngModelOptions]="{standalone: true}" placeholder="0000.00-000"
+                                                required>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="validationDefault03">CEP</label>
-                                        <input type="text" class="form-control" [(ngModel)]="this.usuario.cep"
-                                            [ngModelOptions]="{standalone: true}" placeholder="0000.00-000" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-6 ">
-                                        <label for="validationDefault03">Senha</label>
-                                        <input type="password" class="form-control" [(ngModel)]="this.usuario.senha"
-                                            [ngModelOptions]="{standalone: true}" placeholder="ex:123456789@" required>
-                                    </div>
-                                    <div class="col-md-6 ">
+                                    <div class="form-row">
+                                        <div class="col-md-6 ">
+                                            <label for="validationDefault03">Senha</label>
+                                            <input type="password" class="form-control" [(ngModel)]="this.usuario.senha"
+                                                [ngModelOptions]="{standalone: true}" placeholder="ex:123456789@"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 ">
                                             <label for="validationDefault03">Foto</label>
                                             <input type="password" class="form-control" [(ngModel)]="this.usuario.foto"
                                                 [ngModelOptions]="{standalone: true}" placeholder="bla.jpg" required>
                                         </div>
+                                    </div>
                                 </div>
 
+                                <div *ngIf="troca == false">
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault01">Nome do Animal</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniNome"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: Mia" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefaultUsername">Tipo</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Ex: gato"
+                                                    aria-describedby="inputGroupPrepend2"
+                                                    [(ngModel)]="meuAniTipo"
+                                                    [ngModelOptions]="{standalone: true}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault01">Raça</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniRaca"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: Ragdoll"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault05">Porte</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniPorte"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: médio" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Vacinação</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniVac"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: sim" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Data de Nascimento</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniNasc"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: dia/mês/ano"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Foto</label>
+                                            <input type="text" class="form-control"
+                                                [(ngModel)]="meuAniFoto"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: mia.jpg"
+                                                required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                                <label for="validationDefault03">Detalhes</label>
+                                                <input type="text" class="form-control"
+                                                    [(ngModel)]="meuAniDetalhes"
+                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: machucada"
+                                                    required>
+                                            </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                <button type="button" class="btn btn-primary" (click)="atualizaUser();">Salvar
-                                    mudanças</button>
+                            <div *ngIf="troca == true">
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" (click)="atualizaUser();">Salvar
+                                        mudanças</button>
+                                </div>
+                            </div>
+                            <div *ngIf="troca == false">
+                                <div class="modal-footer">                        
+                                    <button type="button" class="btn btn-primary" (click)="insereNovoAnimal();">Salvar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,34 +191,25 @@
                 <h5 class="card-title">No que esta pensando?</h5>
                 <textarea class="form-control mt-3" id="exampleFormControlTextarea1" rows="3"
                     [(ngModel)]="conteudo"></textarea>
-                <button class="btn btn-info mt-2 " (click)="enviarDados();" >Postar</button>
+                <button class="btn btn-info mt-2 " (click)="enviarDados();">Postar</button>
             </div>
         </div>
 
         <!--Conteudo-->
+
+   
         <div *ngFor="let item of posts">
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
                     <div class="row">
                         <div class="col-md-12 postTexto btn-group">
-                            <h3>{{usuario.nome}}</h3>
-                            <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        </button>
-                        <div class="dropdown-menu size">
-                            <a [routerLink]="['ATP',item.id]">Editar</a>
-                        </div>
+                            <h3>{{ item.autorPost.nome }}</h3>
                         </div>
                     </div>
-                   
                 </div>
-
                 <div class="row">
                     <div class="card-body">
-
-
                         <p class="card-text">{{item.postConteudo}}</p>
-
                     </div>
                 </div>
             </div>

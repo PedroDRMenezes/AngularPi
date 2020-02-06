@@ -191,6 +191,8 @@ export class OpenComponent implements OnInit {
   
   enviarDados() {
     console.log(this.usuario)
+    this.usuario.nomeDeUsuario = this.usuario.nome;
+    this.usuario.foto = "https://image.freepik.com/vetores-gratis/usuarios-do-sistema-de-tango_17-329084610.jpg";
     this.srv.adicionaUser(this.usuario).subscribe(
       res => {
         console.log(res)

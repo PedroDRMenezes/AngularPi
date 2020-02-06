@@ -1,6 +1,6 @@
 <!-- Menu do site -->
 <nav class="navbar estilo navbar-expand-lg navbar-light ">
-    <!-- Nosso logo -->
+    <!-- Nosso logo --> 
     <img class="Imagem logo" src="../../../assets/imagens/Logo.png">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
     <!-- Itens do Menu -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <div *ngIf="condition == 0">
+            <div *ngIf="condition == 0"> 
                 <li class="nav-item">
                     <a class="nav-link" id="hm" [routerLink]="'/home'">Home <span class="sr-only">(current)</span></a>
                 </li>
@@ -41,6 +41,8 @@
             <li class="nav-item">
                 <a class="nav-link" id="bi" [routerLink]="'/centralajuda'">FAQ</a>
             </li>
+
+          
         </ul>
 
         <form class="form-inline my-2 my-lg-0">
@@ -51,6 +53,11 @@
                     Login
                 </button>
             </div>
+            <div *ngIf="condition == 0">
+                    <button type="button" class="btn btn-info text-info corBotao" (click)='logout();'>
+                        Logout
+                    </button>
+                </div>
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
