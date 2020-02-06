@@ -16,7 +16,7 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class PostagemIdComponent implements OnInit { 
 
   
-  usuario:Usuario;
+  usuario:Usuario= new Usuario();
   constructor(
               private router: Router,
               private userService:UsuarioService) { }
@@ -36,7 +36,6 @@ export class PostagemIdComponent implements OnInit {
             global.USUARIO = res;
             this.usuario = res;
             this.encontraMeusPost();
-            
           });
       } else {
         console.log("tenho token e Usuario");

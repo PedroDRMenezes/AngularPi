@@ -44,6 +44,8 @@ export class HomeComponent implements OnInit {
   public novoPost: NovoPost = new NovoPost();
   public troca: boolean = true;
 
+  public meuani: Array<MeuAnimal> = new Array();
+
   ngOnInit() {
     console.log("Estou na home  ");
     console.log(this.usuario);
@@ -59,10 +61,12 @@ export class HomeComponent implements OnInit {
             global.USUARIO = res;
             this.usuario = res;
             this.encontrarTodos();
+            this.buscaMeuAni();
           });
       } else {
         this.usuario = global.USUARIO;
         this.encontrarTodos();
+        this.buscaMeuAni();
       }
     }
   }
@@ -100,8 +104,7 @@ export class HomeComponent implements OnInit {
   atualizaUser() {
     this.userService.atualizaUser(this.usuario).subscribe((res: Usuario) => {
       $("#Fechar").click();
-      alert("atualizado com sucesso")
-      //window.location.reload();
+      alert("atualizado com sucesso");
       console.log(res);
       console.log("usuario atualizado... recarregando posts");
       this.encontrarTodos();
@@ -129,11 +132,12 @@ export class HomeComponent implements OnInit {
     console.log(this.meuAnimal);
 
     this.meuAniService.adicionaMeuAnimal(this.meuAnimal).subscribe((res: MeuAnimal) => {
+      this.buscaMeuAni();
       $("#Fechar").click();
       alert("Novo animal inserido com sucesso!");
       console.log("Veio pro banco o animalllllll")
       console.log(res)
-
+  
     })
   }
 
@@ -145,5 +149,8 @@ export class HomeComponent implements OnInit {
     this.troca = false;
   }
 
+  buscaMeuAni(){
+    this.meuani = this.usuario.meuAnimal;
+  }
 
 }
