@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="bg-text">
             <h1>Safe Pet</h1>
-            <p>A.N.I.+ (ADOÇÃO - NOVIDADE - IMPACTO)</p> 
+            <p>A.N.I.+ (ADOÇÃO - NOVIDADE - IMPACTO)</p>
         </div>
 
         <div class="row">
@@ -13,59 +13,20 @@
     </div>
 </div>
 
-<div class="row margem">
-    <div class="col-md-2"></div>
-    <div class="col-md-6 ">
-        <input class="form-control mr-sm-2" type="number" min="1" max="10" placeholder="Pesquisar por Id"
-            aria-label="Search" [(ngModel)]="id">
-    </div>
-    <div class="col-md-2 center">
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" (click)="procurarId();">Buscar</button>
-    </div>
-    <div class="col-md-2"></div>
-</div>
-
 <!--Conteudo-->
-<div *ngIf="post != null">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class="card mt-3">
-                <div class="card-header">
-                    <div class="row">
-                        <div class="col-md-1 P0">
-                            <img class="Imagem border-dark border tm" src="{{post.linkimg}}">
-                        </div>
-                        <div class="col-md-10 ">
-                            <h3>@user - {{post.id}}</h3>
-                            <h6>{{post.dataInclusao}}</h6>
-                        </div>
-                        <div class="col-md-1">
-                            <div class="btn-group">
-                                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                </button>
-                                <div class="dropdown-menu size">
-                                    <p>bla</p>
-                                    <p>ble</p>
-                                    <p>bli</p>
-                                    <p>blo</p>
-                                    <p>blu</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<div *ngFor="let item of post">
+    <div class="card mt-3">
+        <div class="card-header " id="testeira">
+            <div class="row">
+                <div class="col-md-12 postTexto btn-group">
+                    <h3>{{this.usuario.nome}}</h3>
                 </div>
-
-                <div class="card-body">
-
-                    <h5 class="card-title">{{post.titulo}}</h5>
-                    <p class="card-text">{{post.conteudo}}</p>
-
-                </div>
-
             </div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="row">
+            <div class="card-body">
+                <p class="card-text">{{item.postConteudo}}</p>
+            </div>
+        </div>
     </div>
 </div>

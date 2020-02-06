@@ -136,7 +136,7 @@ export class HomeComponent implements OnInit {
   }
 
   adiciona(){
-  this.troca = false;
+    this.troca = false;
   }
 
 
