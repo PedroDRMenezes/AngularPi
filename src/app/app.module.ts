@@ -17,6 +17,8 @@ import { DetalheComponent } from './variavel/detalhe/detalhe.component';
 import { OpenComponent } from './variavel/open/open.component';
 import { CentralAjudaComponent } from './variavel/central-ajuda/central-ajuda.component';
 import { AtualizaPostComponent } from './variavel/atualiza-post/atualiza-post.component';
+import { QueroAjudarComponent } from './Variavel/quero-ajudar/quero-ajudar.component';
+import { ListagemAdocaoComponent } from './Variavel/listagem-adocao/listagem-adocao.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import { AtualizaPostComponent } from './variavel/atualiza-post/atualiza-post.co
     DetalheComponent,
     OpenComponent,
     CentralAjudaComponent,
-    AtualizaPostComponent
+    AtualizaPostComponent,
+    QueroAjudarComponent,
+    ListagemAdocaoComponent
   ],
   imports: [
     BrowserModule,

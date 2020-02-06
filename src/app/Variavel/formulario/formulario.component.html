@@ -10,8 +10,10 @@
                 <div class="form-row mt-5">
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault01">Nome</label>
-                        <input type="text" class="form-control" 
-                            placeholder="Nome" required> 
+                        <input type="text" class="form-control"  [(ngModel)]="nome"
+                        [ngModelOptions]="{standalone: true}"
+                            placeholder="Nome" required><span *ngIf='erroNome'
+                            class="err">{{erroNome}}</span>
                     </div>
                     <div class="col-md-4 mb-3">
                         <label for="validationDefault02">Tipo</label>

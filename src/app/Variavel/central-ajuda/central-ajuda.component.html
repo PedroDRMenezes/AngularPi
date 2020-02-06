@@ -7,11 +7,9 @@
     </div>
 
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10 forest cor">
+        <div class="col-md-12 forest cor">
             <h1 class="tituloFaq">Como podemos ajudar você?</h1>
         </div>
-        <div class="col-md-1"></div>
     </div>
 
     <div class="row">
@@ -262,10 +260,11 @@
                     <label for="exampleFormControlTextarea1">
                         <h4>Envie sua mensagem:</h4>
                     </label>
-                    <textarea class="form-control border-info" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control border-info" [(ngModel)]="msg" [ngModelOptions]="{standalone: true}" id="exampleFormControlTextarea1" rows="3"></textarea><span *ngIf='msg' class="retorno">{{msgRetorno}}</span>
                 </div>
             </form>
-            <button type="submit" class="btn btn-info texto">Enviar</button>
+            <button  class="btn btn-info texto" type="submit" (click)="mensagem();">Enviar</button>
+            
         </div>
         <div class="col-md-1"></div>
     </div>

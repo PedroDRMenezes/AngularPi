@@ -12,4 +12,15 @@ export class CentralAjudaComponent implements OnInit {
   ngOnInit() {
   }
 
+  private msg: string;
+  private msgRetorno: string;
+
+  mensagem(){
+    if (this.msg != null) {
+      this.msgRetorno = "Mensagem enviada com sucesso! Aguarde nosso retorno!";
+    }
+  }
+
+
+
 }
