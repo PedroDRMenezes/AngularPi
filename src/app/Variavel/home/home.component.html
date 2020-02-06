@@ -6,7 +6,10 @@
             <div class="card-body">
                 <p class="card-text nomeUser">{{ usuario.nome }}</p>
                 <p class="nomeUser">{{ usuario.email }}</p>
-
+                <div *ngFor="let item of meuani">
+                        {{item.meuAniNome}}
+                </div>
+                
                 <!-- Botão modal -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalExemplo">
                     atualizar
