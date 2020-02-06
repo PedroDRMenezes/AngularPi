@@ -29,6 +29,8 @@ export class FormularioComponent implements OnInit {
   private erroPorte: string;
   private erroLocal: string;
   private erroDetalhes: string;
+  private erroFoto:string;
+  private erroRaca:string;
   private cont: number=0;
   public usuario: Usuario
 
@@ -67,6 +69,22 @@ export class FormularioComponent implements OnInit {
     }
     else{
       this.erroNome = null;
+    }
+    if(this.raca==null){
+      this.erroRaca = "Raça Inválida";
+      this.raca = null;
+      this.cont++;
+    }
+    else{
+      this.erroRaca = null;
+    }
+    if(this.foto==null){
+      this.erroFoto = "Foto Inválida";
+      this.foto = null;
+      this.cont++;
+    }
+    else{
+      this.erroFoto = null;
     }
 
 

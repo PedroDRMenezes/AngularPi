@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12" id="testeira">
-                <img src="../../assets/imagens/testeira.jpg" class="img-fluid" alt="Responsive image">
+                <img src="../../../assets/imagens/gato com o pc.jpg" class="img-fluid" alt="Responsive image">
             </div>
         </div>
         <div class="container">
@@ -26,7 +26,9 @@
                         <div class="input-group">
                             
                             <input type="text" class="form-control" 
-                                aria-describedby="inputGroupPrepend2" placeholder="Raça"required>
+                                aria-describedby="inputGroupPrepend2" [(ngModel)]="raca"
+                                [ngModelOptions]="{standalone: true}" placeholder="Raça"required><span *ngIf='erroRaca'
+                                class="err">{{erroRaca}}</span>
                         </div>
                         
                     </div>
@@ -50,7 +52,9 @@
                     </div>
                     <div class="col-md-3 mb-3">
                         <label for="validationDefault04">Foto</label>
-                        <input type="text" class="form-control"  placeholder="Foto" required>
+                        <input type="text" class="form-control" [(ngModel)]="foto"
+                        [ngModelOptions]="{standalone: true}" placeholder="Foto" required><span *ngIf='erroFoto'
+                        class="err">{{erroFoto}}</span>
                     </div>
                     
                 </div>

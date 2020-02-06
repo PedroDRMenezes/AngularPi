@@ -14,7 +14,7 @@ import { global } from 'src/app/model/global';
 })
 export class ListagemAdocaoComponent implements OnInit {
 
-
+  animal: AnimalAdocao[];
 
   constructor(private anima: AnimalAdocaoService,
     private router: Router,
@@ -43,6 +43,8 @@ export class ListagemAdocaoComponent implements OnInit {
       }
     }
 
+    this.pegaAnimal();
+
   }
   
 
@@ -55,4 +57,13 @@ export class ListagemAdocaoComponent implements OnInit {
     })
   }
 
+
+
+
+  pegaAnimal(){
+    this.anima.getAnimalAll().subscribe((pega: AnimalAdocao[])=>{
+      this.animal = pega;
+      console.log(this.animal);
+    })
+  }
 }

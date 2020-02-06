@@ -56,6 +56,8 @@
       margin-top: 50px;
       margin-right: 20px;
       width: 200px;
+      margin-left:100px ;
+     
   }
 
   #arrecadado {
@@ -75,4 +77,11 @@
 
   .card {
       width: 500px;
+  }
+  
+  .ajuda{
+      color: white;
+      font-size: 20px;
+      margin-right: 10px;
+      margin-top: 25px;
   }
