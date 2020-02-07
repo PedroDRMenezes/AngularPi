@@ -1,39 +1,39 @@
 <div class="row margin">
-        <!-- Fixo Esquerdo -->
-        <div class="col-md-3">
-            <div class="card f">
-                <img class="card-img-top imagemAvatar rounded" src="{{ usuario.foto }}" alt="Avatar">
-                <div class="card-body">
-                    <p class="card-text textoPadrao tmTexto"> <strong> {{ usuario.nome }} </strong> </p>
-                    <p class="textoPadrao tmEmail">{{ usuario.email }}</p>
-                    <div *ngFor="let item of meuani">
-                        {{item.meuAniNome}}
-                    </div>
-    
-                    <!-- Botão modal -->
-                    <div class="d-flex justify-content-center"> 
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalExemplo">
-                            Adicionar Pet
-                        </button>
-                    </div>
-                    
-    
-                    <!-- Modal -->
-                    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
-                        aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h3>
-                                        Adicionar Animal
-                                    </h3>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                                        <span aria-hidden="true" id="Fechar">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-    
-                                  <!--  <div *ngIf="troca == false">
+    <!-- Fixo Esquerdo -->
+    <div class="col-md-3">
+        <div class="card f">
+            <img class="card-img-top imagemAvatar rounded" src="{{ usuario.foto }}" alt="Avatar">
+            <div class="card-body">
+                <p class="card-text textoPadrao tmTexto"> <strong> {{ usuario.nome }} </strong> </p>
+                <p class="textoPadrao tmEmail">{{ usuario.email }}</p>
+                <div *ngFor="let item of meuani">
+                    {{item.meuAniNome}}
+                </div>
+
+                <!-- Botão modal -->
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalExemplo">
+                        Adicionar Pet
+                    </button>
+                </div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3>
+                                    Adicionar Animal
+                                </h3>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                    <span aria-hidden="true" id="Fechar">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <!--  <div *ngIf="troca == false">
                                         <div class="form-row">
                                             <div class="col-md-12 mb-3">
                                                 <label for="validationDefault01">Nome completo</label>
@@ -99,134 +99,167 @@
                                             </div>
                                         </div>
                                     </div>-->
-    
-                                    <div *ngIf="troca == true">
-                                        <div class="form-row">
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationDefault01">Nome do Animal</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniNome"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: Mia" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefaultUsername">Tipo</label>
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control" placeholder="Ex: gato"
-                                                        aria-describedby="inputGroupPrepend2" [(ngModel)]="meuAniTipo"
-                                                        [ngModelOptions]="{standalone: true}" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefault01">Raça</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniRaca"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: Ragdoll"
-                                                    required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefault05">Porte</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniPorte"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: médio" required>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefault03">Vacinação</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniVac"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: sim" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefault03">Data de Nascimento</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniNasc"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: dia/mês/ano"
-                                                    required>
-                                            </div>
-                                            <div class="col-md-6 mb-3">
-                                                <label for="validationDefault03">Foto</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniFoto"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: mia.jpg"
-                                                    required>
-                                            </div>
-                                            <div class="col-md-12 mb-3">
-                                                <label for="validationDefault03">Detalhes</label>
-                                                <input type="text" class="form-control" [(ngModel)]="meuAniDetalhes"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: machucada"
-                                                    required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                                 <div *ngIf="troca == true">
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" (click)="atualizaUser();">Salvar
-                                            mudanças</button>
+                                    <div class="form-row">
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault01">Nome do Animal</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniNome"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: Mia" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefaultUsername">Tipo</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Ex: gato"
+                                                    aria-describedby="inputGroupPrepend2" [(ngModel)]="meuAniTipo"
+                                                    [ngModelOptions]="{standalone: true}" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault01">Raça</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniRaca"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: Ragdoll"
+                                                required>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <form action="/action_page.php">
+                                            <label for="validationDefault05">Porte</label>
+                                            <input list="bbb" class="form-control" [(ngModel)]="meuAniPorte"
+                                                [ngModelOptions]="{standalone: true}" name="browser"
+                                                placeholder="Ex: médio" required>
+                                            <datalist id="bbb">
+                                                <option value="Pequeno">
+                                                <option value="Médio">
+                                                <option value="Grande">
+                                            </datalist>
+                                        </form>
+
+                                        <div class="col-md-6 mb-3">
+                                            <form action="/action_page.php">
+                                                <label for="validationDefault03">Vacinação</label>
+                                                <input list="browsers" class="form-control" [(ngModel)]="meuAniVac"
+                                                    [ngModelOptions]="{standalone: true}" name="browser"
+                                                    placeholder="Ex: sim" required>
+                                                <datalist id="browsers">
+                                                    <option value="Vacinado">
+                                                    <option value="Sem Vacinação">
+                                                </datalist> </form>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Data de Nascimento</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniNasc"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: dia/mês/ano"
+                                                required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="validationDefault03">Foto</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniFoto"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: mia.jpg"
+                                                required>
+                                        </div>
+                                        <div class="col-md-12 mb-3">
+                                            <label for="validationDefault03">Detalhes</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniDetalhes"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: machucada"
+                                                required>
+                                        </div>
                                     </div>
                                 </div>
-                                <div *ngIf="troca == false">
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            (click)="insereNovoAnimal();">Salvar</button>
-                                    </div>
+                            </div>
+                            <div *ngIf="troca == true">
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary" (click)="atualizaUser();">Salvar
+                                        mudanças</button>
+                                </div>
+                            </div>
+                            <div *ngIf="troca == false">
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                        (click)="insereNovoAnimal();">Salvar</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-    
                 </div>
-            </div>
-        </div>
-    
-        <!-- Pagina -->
-        <div class="col-md-6">
-            <!--Imput do user-->
-            <div class="card ">
-                <div class="card-header bg-azulClaro textoPadrao" id="">
-                    <h4> {{ usuario.nome }} no que esta pensando? </h4>  
-                </div>
-                <div class="card-body">
-                    <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"
-                        [(ngModel)]="conteudo"></textarea>
-                    <button class="btn btn-info mt-2 " (click)="enviarDados();">Postar</button>
-                </div>
-            </div>
-    
-            <!--Conteudo-->
-    
-    
-            <div *ngFor="let item of posts">
-                <div class="card mt-3">
-                    <div class="card-header bg-azulClaro textoPadrao" id="">
-                        <div class="row">
-                            <div class="col-md-12 postTexto btn-group d-flex align-items-center">
-                                <img src="{{item.autorPost.foto}}" class="rounded-circle mr-3 border border-primary" width="50" height="50" alt="">
-                                <h3>{{ item.autorPost.nome }}</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="card-body">
-                            <p class="card-text ml-4" >{{item.postConteudo}}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    
-        </div>
-    
-        <!-- Fixo Direito -->
-        <div class="col-md-3">
-            <div class="card ">
-                <img class="card-img-top" src="../../../assets/imagens/forest.jpg" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Título do card</h5>
-                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o
-                        conteúdo do card.</p>
-                    <a [routerLink]="'#'" class="btn btn-outline-dark">Visitar</a>
-                </div>
+
             </div>
         </div>
     </div>
-    
-    
+
+    <!-- Pagina -->
+    <div class="col-md-6">
+        <!--Imput do user-->
+        <div class="card ">
+            <div class="card-header bg-azulClaro textoPadrao" id="">
+                <h4> {{ usuario.nome }} no que esta pensando? </h4>
+            </div>
+            <div class="card-body">
+                <textarea class="form-control mb-2" id="exampleFormControlTextarea1" rows="3"
+                    [(ngModel)]="conteudo"></textarea>
+                <button class="btn btn-info mt-2 " (click)="enviarDados();">Postar</button>
+            </div>
+        </div>
+
+        <!--Conteudo-->
+
+
+        <div *ngFor="let item of posts">
+            <div class="card mt-3">
+                <div class="card-header bg-azulClaro textoPadrao" id="">
+                    <div class="row">
+                        <div class="col-md-12 postTexto btn-group d-flex align-items-center">
+                            <img src="{{item.autorPost.foto}}" class="rounded-circle mr-3 border border-primary"
+                                width="50" height="50" alt="">
+                            <h3>{{ item.autorPost.nome }}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card-body">
+                        <p class="card-text ml-4">{{item.postConteudo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Fixo Direito -->
+    <div class="col-md-3">
+        <div class="card ">
+            <img class="card-img-top" src="../../../assets/imagens/dogHero.png" alt="Logo Dog Hero">
+            <div class="card-body">
+                <h5 class="card-title">Patrocinador</h5>
+                <p class="card-text">
+                    <strong>DogHero: loucos por cachorro</strong>
+                    Hospedagem, Creche,Pet sitter, Passeios</p>
+                <a href="https://www.doghero.com.br" target="_blank" class="btn btn-outline-dark">Visitar</a>
+            </div>
+        </div>
+        <div class="card ">
+            <img class="card-img-top" src="../../../assets/imagens/whiskas_logo_.jpg" alt="Logo Whiskas">
+            <div class="card-body">
+                <h5 class="card-title">Patrocinador</h5>
+                <p class="card-text">
+                    <strong>Os gatos preferem Whiskas</strong>
+                    Whiskas, além de delicioso, tem um alimento para cada fase da vida do seu gato.</p>
+                <a href="https://www.whiskas.com.br/" target="_blank" class="btn btn-outline-dark">Visitar</a>
+            </div>
+        </div>
+        <div class="card ">
+            <img class="card-img-top" src="../../../assets/imagens/petsLogo.png" alt="Logo Pets">
+            <div class="card-body">
+                <h5 class="card-title">Patrocinador</h5>
+                <p class="card-text">
+                    <strong>Pets: A melhor opção para seu pet</strong>
+                    Cuidado, carinho e atenção para seu animal de estimacão</p>
+                <a href="https://www.petz.com.br/" target="_blank" class="btn btn-outline-dark">Visitar</a>
+            </div>
+        </div>
+    </div>
