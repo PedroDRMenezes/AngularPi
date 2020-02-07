@@ -1,69 +1,88 @@
 <div class="row">
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-12" id="testeira">
-                <img src="../../../assets/imagens/gato com o pc.jpg" class="img-fluid" alt="Responsive image">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12" id="testeira">
+                    <img src="../../../assets/imagens/gato com o pc.jpg" class="img-fluid" alt="Responsive image">
+                </div>
             </div>
-        </div>
-        <div class="container">
-            <form>
-                <div class="form-row mt-5">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationDefault01">Nome</label>
-                        <input type="text" class="form-control"  [(ngModel)]="nome"
-                        [ngModelOptions]="{standalone: true}"
-                            placeholder="Nome" required><span *ngIf='erroNome'
-                            class="err">{{erroNome}}</span>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationDefault02">Tipo</label>
-                        <input type="text" class="form-control" [(ngModel)]="tipo"
-                            [ngModelOptions]="{standalone: true}" placeholder="Tipo" required><span *ngIf='erroTipo'
-                            class="err">{{erroTipo}}</span>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <label for="validationDefaultUsername">Raça</label>
-                        <div class="input-group">
+            <div class="container">
+                <form>
+                    <div class="form-row mt-5">
+                        <div class="col-md-4 mb-3">
+                            <label for="validationDefault01">Nome</label>
+                            <input type="text" class="form-control"  [(ngModel)]="nome"
+                            [ngModelOptions]="{standalone: true}"
+                                placeholder="Nome" required><span *ngIf='erroNome'
+                                class="err">{{erroNome}}</span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationDefault02">Tipo</label>
+                            <input type="text" class="form-control" [(ngModel)]="tipo"
+                                [ngModelOptions]="{standalone: true}" placeholder="Tipo" required><span *ngIf='erroTipo'
+                                class="err">{{erroTipo}}</span>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="validationDefaultUsername">Raça</label>
+                            <div class="input-group">
+                                
+                                <input type="text" class="form-control" 
+                                    aria-describedby="inputGroupPrepend2" [(ngModel)]="raca"
+                                    [ngModelOptions]="{standalone: true}" placeholder="Raça"required><span *ngIf='erroRaca'
+                                    class="err">{{erroRaca}}</span>
+                            </div>
                             
-                            <input type="text" class="form-control" 
-                                aria-describedby="inputGroupPrepend2" [(ngModel)]="raca"
-                                [ngModelOptions]="{standalone: true}" placeholder="Raça"required><span *ngIf='erroRaca'
-                                class="err">{{erroRaca}}</span>
+                        </div>
+                    </div>
+                    
+                        
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                                <form action="/action_page.php">
+                            <label for="validationDefault03">Porte</label>
+                            <input list="bs" class="form-control" [(ngModel)]="porte"
+                                [ngModelOptions]="{standalone: true}" name="browser" placeholder="Porte" required>
+                                <datalist id="bs">
+                                        <option value="Pequeno">
+                                        <option value="Médio">
+                                        <option value="Grande">
+                                      </datalist><span *ngIf='erroPorte'
+                                class="err">{{erroPorte}}</span>
+                                </form>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault04">Local</label>
+                            <input type="text" class="form-control" [(ngModel)]="local"
+                                [ngModelOptions]="{standalone: true}" placeholder="Local" required><span *ngIf='erroLocal'
+                                class="err">{{erroLocal}}</span>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                                
+                        <form action="/action_page.php">
+                            <label for="validationDefault04">Vacinação</label>
+                            <input list="browsers" class="form-control" [(ngModel)]="vacina"
+                            [ngModelOptions]="{standalone: true}" name="browser" placeholder="Vacinação" required>
+                            <datalist id="browsers">
+                              <option value="Vacinado">
+                              <option value="Sem Vacinação">
+                            </datalist><span *ngIf='erroPorte'
+                            class="err">{{erroVacinacao}}</span>
+                          </form>
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <label for="validationDefault04">Foto</label>
+                            <input type="text" class="form-control" [(ngModel)]="foto"
+                            [ngModelOptions]="{standalone: true}" placeholder="Foto" required><span *ngIf='erroFoto'
+                            class="err">{{erroFoto}}</span>
                         </div>
                         
                     </div>
-                </div>
-                <div class="form-row">
-                    <div class="col-md-6 mb-3">
-                        <label for="validationDefault03">Porte</label>
-                        <input type="text" class="form-control" [(ngModel)]="porte"
-                            [ngModelOptions]="{standalone: true}" placeholder="Porte" required><span *ngIf='erroPorte'
-                            class="err">{{erroPorte}}</span>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="validationDefault04">Local</label>
-                        <input type="text" class="form-control" [(ngModel)]="local"
-                            [ngModelOptions]="{standalone: true}" placeholder="Local" required><span *ngIf='erroLocal'
-                            class="err">{{erroLocal}}</span>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="validationDefault04">Vacinação</label>
-                        <input type="text" class="form-control"  placeholder="Vacinação" required>
-                    </div>
-                    <div class="col-md-3 mb-3">
-                        <label for="validationDefault04">Foto</label>
-                        <input type="text" class="form-control" [(ngModel)]="foto"
-                        [ngModelOptions]="{standalone: true}" placeholder="Foto" required><span *ngIf='erroFoto'
-                        class="err">{{erroFoto}}</span>
-                    </div>
-                    
-                </div>
-                <label for="validationTextarea">Detalhes</label>
-                <textarea class="form-control " [(ngModel)]="detalhes" [ngModelOptions]="{standalone: true}"
-                    placeholder="Digite aqui..." required></textarea><span *ngIf='erroDetalhes'
-                    class="err">{{erroDetalhes}}</span><br>
-                <button class="btn btn-info my-2 mt-2" (click)="valida();" id="BTn">Enviar</button>
-            </form>
+                    <label for="validationTextarea">Detalhes</label>
+                    <textarea class="form-control " [(ngModel)]="detalhes" [ngModelOptions]="{standalone: true}"
+                        placeholder="Digite aqui..." required></textarea><span *ngIf='erroDetalhes'
+                        class="err">{{erroDetalhes}}</span><br>
+                    <button class="btn btn-info my-2 mt-2" (click)="valida();" id="BTn">Enviar</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>

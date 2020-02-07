@@ -5,6 +5,7 @@ import { AnimalAdocao } from 'src/app/model/animalAdocao';
 import { Usuario } from 'src/app/model/usuario';
 import { global } from 'src/app/model/global';
 import { UsuarioService } from 'src/app/service/usuario.service';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-formulario',
@@ -33,7 +34,8 @@ export class FormularioComponent implements OnInit {
   private erroRaca:string;
   private cont: number=0;
   public usuario: Usuario
-
+  private vacina : string;
+private erroVacinacao:string;
   constructor(private srv: AnimalAdocaoService,
                private router: Router,
                private userService: UsuarioService) { }
@@ -104,6 +106,15 @@ export class FormularioComponent implements OnInit {
     else{
       this.erroPorte = null;
     }
+    if(this.porte == "Pequeno"){
+      this.porte = "p";
+    }
+    else if(this.porte == "Médio"){
+      this.porte = "m";
+    }
+    else{
+      this.porte = "g";
+    }
     if(this.local==null){
       this.erroLocal = "Local Inválido";
       this.local = null;
@@ -120,6 +131,21 @@ export class FormularioComponent implements OnInit {
     
     else{
       this.erroDetalhes = null;
+    }
+    if(this.vacina==null){
+      this.erroVacinacao = "Informação Obrigatória";
+      this.vacina = null;
+      this.cont++;
+    }
+    
+    else{
+      this.erroVacinacao = null;
+    }
+    if(this.vacina=="Vacinado"){
+      this.vacinacao = true;
+    }
+    else{
+      this.vacinacao = false;
     }
 
     if (this.cont == 0) {
@@ -152,7 +178,6 @@ export class FormularioComponent implements OnInit {
       alert("Erro enviar dados");
     }
     );
-
 
   }
 }

@@ -1,18 +1,62 @@
-<div class="row"> 
-    <div class="col-md-12">
-        <div *ngFor="let item of animal">
-        <p>
+<div class="row">
+        <div class="col-md-12">
+            <div *ngFor="let item of animal">
+                <p>
+    
+                    {{item.adocaoNome}}
+                    {{item.adocaoTipo}}
+                    {{item.adocaoRaca}}
+                </p>
+                <div *ngIf="item.adocaoPorte == 'p'">Pequeno Porte</div>
+                <div *ngIf="item.adocaoPorte == 'm'">Porte Médio</div>
+                <div *ngIf="item.adocaoPorte == 'g'">Porte Grande</div>
+    
+                <p>
+                    {{item.adocaoLocal}}
+                </p>
             
-            {{item.adocaoNome}}
-            {{item.adocaoTipo}}
-            {{item.adocaoRaca}}
-            {{item.adocaoPorte}}
-            {{item.adocaoLocal}}
-            {{item.adocaoVacinacao}}
-            {{item.adocaoDetalhes}}
-            {{item.adocaoFoto}}
-        </p>
+                <div *ngIf="item.adocaoVacinacao == true">Vacinado</div>
+                <div *ngIf="item.adocaoVacinacao == false">Não Vacinado</div>
+                <p>
+                    {{item.adocaoDetalhes}}
+                    <img clas="img-fluid"src={{item.adocaoFoto}} alt="">
+                </p>
+            </div>
+    
+        </div>
     </div>
 
-</div>
-</div>
+
+<!--
+
+    <section class="details-card" *ngFor="let item of animal">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                        <div class="col-md-4">
+                        </div>
+                    <div class="col-md-4">
+                        <div class="card-content" >
+                            <div class="card-img">
+                                <img clas="img-fluid"src={{item.adocaoFoto}} alt="">
+                                <span><h4>heading</h4></span>
+                            </div>
+                            <div class="card-desc">
+                                <h3>{{item.adocaoNome}}</h3>
+                                <p>{{item.adocaoTipo}}</p>
+                                <p>{{item.adocaoRaca}}</p>
+                                <p>{{item.adocaoPorte}}</p>
+                                <p>{{item.adocaoLocal}}</p>
+                                <p>{{item.adocaoVacinacao}}</p>
+                                <p>{{item.adocaoDetalhes}}</p> 
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+    -->
+      
