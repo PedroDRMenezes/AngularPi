@@ -149,7 +149,6 @@ private erroVacinacao:string;
     }
 
     if (this.cont == 0) {
-      alert("FOI")
     this.enviarDados();
     
     }

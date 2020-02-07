@@ -206,7 +206,6 @@ export class OpenComponent implements OnInit {
       err => {
         console.log(err)
         alert("erro ao inserir")
-        window.location.reload();
       }
     )
   }

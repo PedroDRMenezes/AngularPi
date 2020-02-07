@@ -10,11 +10,11 @@ export class AnimalAdocaoService {
   constructor(private http: HttpClient) {}
   
     public getAnimalAll() {
-      return this.http.get("http://localhost:8080/animalAdocao");
+      return this.http.get("http://safepet.tech:8080/animalAdocao");
     }
 
   public adicionaAnimal(animalAdocao: AnimalAdocao) {
-    return this.http.post("http://localhost:8080/animalAdocao/novo", animalAdocao);
+    return this.http.post("http://safepet.tech:8080/animalAdocao/novo", animalAdocao);
   }
 
 }

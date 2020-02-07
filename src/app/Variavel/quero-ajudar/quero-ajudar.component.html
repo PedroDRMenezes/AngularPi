@@ -16,35 +16,37 @@
 
     </div>
 
-
-
-    <div class="row">
-        <!-- Faça a sua doação -->
-        <div class="col-md-6" id="doar">
-            <div class="card text-center">
-                <div class="card-header">
-                    <strong> Digite um Valor </strong>
+<div class="container">
+        <div class="row">
+                <!-- Faça a sua doação -->
+                <div class="col-md-6" id="doar">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <strong> Digite um Valor </strong>
+                        </div>
+                        <div class="card-body" id="doado">
+                            <input type="text" class="doacao" [(ngModel)]="valorArrecadado" placeholder="Ex: R$ 100,00">
+                            <button class="btn btn-doacao" (click)="doacao();">Doar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body" id="doado">
-                    <input type="text" class="doacao" [(ngModel)]="valorArrecadado" placeholder="Ex: R$ 100,00">
-                    <button class="btn btn-doacao" (click)="doacao();">Doar</button>
-                </div>
-            </div>
-        </div>
+                
         
-
-        <!-- Valor Arrecadado -->
-        <div class="col-md-6" id="arrecadado">
-            <div class="card text-center">
-                <div class="card-header">
-                    <strong> Valor Arrecadado </strong>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">R$: {{valorTotal}},00</p>
+                <!-- Valor Arrecadado -->
+                <div class="col-md-6" id="arrecadado">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <strong> Valor Arrecadado </strong>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">R$: {{valorTotal}},00</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+</div>
+
+  
 
 
 </div>
