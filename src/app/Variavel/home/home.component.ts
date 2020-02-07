@@ -18,12 +18,12 @@ import { MeuAniService } from 'src/app/service/meu-ani.service';
 export class HomeComponent implements OnInit {
 
   constructor(private PublicacoesService: PublicacoesService,
-    private router: Router,
-    private userService: UsuarioService,
-    private meuAniService: MeuAniService) { }
+              private router: Router,
+              private userService: UsuarioService,
+              private meuAniService: MeuAniService) { }
 
   public id: number = 1;
-  public posts: Post[] = [];
+  public posts: Post[];
   public p: Post = new Post();
   public usuario: Usuario = new Usuario();
   public meuAnimal: MeuAnimal = new MeuAnimal();
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   public novoConteudo: string;
   public novoPost: NovoPost = new NovoPost();
   public troca: boolean = true;
-
+  
   public meuani: Array<MeuAnimal> = new Array();
 
   ngOnInit() {
@@ -80,7 +80,7 @@ export class HomeComponent implements OnInit {
 
   encontrarTodos() {
     this.PublicacoesService.getAll().subscribe((res: Post[]) => {
-      this.posts = res;
+      this.posts = res;      
     });
   }
 
@@ -102,6 +102,7 @@ export class HomeComponent implements OnInit {
   }
 
   atualizaUser() {
+    console.log(this.usuario);
     this.userService.atualizaUser(this.usuario).subscribe((res: Usuario) => {
       $("#Fechar").click();
       alert("atualizado com sucesso");
@@ -109,6 +110,7 @@ export class HomeComponent implements OnInit {
       console.log("usuario atualizado... recarregando posts");
       this.encontrarTodos();
       console.log("posts atualizados");
+      
     })
   }
 

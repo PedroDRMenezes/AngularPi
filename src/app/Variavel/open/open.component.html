@@ -61,6 +61,20 @@
                             [ngModelOptions]="{standalone: true}" placeholder="" required (keyup)="validacao();"><span
                             *ngIf='erroCSenha' class="err">{{erroCSenha}}</span>
                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 md-3">
+                        <div *ngIf(linkImg)>
+                            <img src="{{linkImg}}" alt="" class="fotoPerfil">
+                        </div>
+                    </div>
+                    <div class="col-md-8 mb-3">
+                        <label for="validationDefault05">Link da Foto</label>
+                        <input type="text" class="form-control" [(ngModel)]="linkImg"
+                            [ngModelOptions]="{standalone: true}" placeholder="Link da foto de perfil" required>
+                    </div>
+                </div>
+                <div class="form-row">
                     <button type="button" class="btn btn-info" (click)="validacao2();">Cadastrar</button>
                 </div>
             </div>

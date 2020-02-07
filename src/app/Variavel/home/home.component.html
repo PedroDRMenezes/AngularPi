@@ -7,12 +7,12 @@
                 <p class="card-text nomeUser">{{ usuario.nome }}</p>
                 <p class="nomeUser">{{ usuario.email }}</p>
                 <div *ngFor="let item of meuani">
-                        {{item.meuAniNome}}
+                    {{item.meuAniNome}}
                 </div>
-                
+
                 <!-- Botão modal -->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modalExemplo">
-                    atualizar
+                    Adicionar Pet
                 </button>
 
                 <!-- Modal -->
@@ -21,17 +21,16 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="btn btn-secondary" (click)="atualiza();">Atualizar
-                                    Cadastro</button>
-                                <button type="button" class="btn btn-secondary" (click)="adiciona();">Adicionar
-                                    Animal</button>
+                                <h3>
+                                    Adicionar Animal
+                                </h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                     <span aria-hidden="true" id="Fechar">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
 
-                                <div *ngIf="troca == true">
+                              <!--  <div *ngIf="troca == false">
                                     <div class="form-row">
                                         <div class="col-md-12 mb-3">
                                             <label for="validationDefault01">Nome completo</label>
@@ -96,14 +95,13 @@
                                                 [ngModelOptions]="{standalone: true}" placeholder="bla.jpg" required>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
 
-                                <div *ngIf="troca == false">
+                                <div *ngIf="troca == true">
                                     <div class="form-row">
                                         <div class="col-md-12 mb-3">
                                             <label for="validationDefault01">Nome do Animal</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniNome"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniNome"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: Mia" required>
                                         </div>
                                     </div>
@@ -112,15 +110,13 @@
                                             <label for="validationDefaultUsername">Tipo</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control" placeholder="Ex: gato"
-                                                    aria-describedby="inputGroupPrepend2"
-                                                    [(ngModel)]="meuAniTipo"
+                                                    aria-describedby="inputGroupPrepend2" [(ngModel)]="meuAniTipo"
                                                     [ngModelOptions]="{standalone: true}" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault01">Raça</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniRaca"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniRaca"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: Ragdoll"
                                                 required>
                                         </div>
@@ -128,39 +124,34 @@
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault05">Porte</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniPorte"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniPorte"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: médio" required>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Vacinação</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniVac"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniVac"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: sim" required>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Data de Nascimento</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniNasc"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniNasc"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: dia/mês/ano"
                                                 required>
                                         </div>
                                         <div class="col-md-6 mb-3">
                                             <label for="validationDefault03">Foto</label>
-                                            <input type="text" class="form-control"
-                                                [(ngModel)]="meuAniFoto"
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniFoto"
                                                 [ngModelOptions]="{standalone: true}" placeholder="Ex: mia.jpg"
                                                 required>
                                         </div>
                                         <div class="col-md-12 mb-3">
-                                                <label for="validationDefault03">Detalhes</label>
-                                                <input type="text" class="form-control"
-                                                    [(ngModel)]="meuAniDetalhes"
-                                                    [ngModelOptions]="{standalone: true}" placeholder="Ex: machucada"
-                                                    required>
-                                            </div>
+                                            <label for="validationDefault03">Detalhes</label>
+                                            <input type="text" class="form-control" [(ngModel)]="meuAniDetalhes"
+                                                [ngModelOptions]="{standalone: true}" placeholder="Ex: machucada"
+                                                required>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -171,8 +162,9 @@
                                 </div>
                             </div>
                             <div *ngIf="troca == false">
-                                <div class="modal-footer">                        
-                                    <button type="button" class="btn btn-primary" (click)="insereNovoAnimal();">Salvar</button>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary"
+                                        (click)="insereNovoAnimal();">Salvar</button>
                                 </div>
                             </div>
                         </div>
@@ -200,7 +192,7 @@
 
         <!--Conteudo-->
 
-   
+
         <div *ngFor="let item of posts">
             <div class="card mt-3">
                 <div class="card-header " id="testeira">
