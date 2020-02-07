@@ -1,62 +1,29 @@
 <div class="row">
-        <div class="col-md-12">
-            <div *ngFor="let item of animal">
-                <p>
-    
-                    {{item.adocaoNome}}
-                    {{item.adocaoTipo}}
-                    {{item.adocaoRaca}}
-                </p>
-                <div *ngIf="item.adocaoPorte == 'p'">Pequeno Porte</div>
-                <div *ngIf="item.adocaoPorte == 'm'">Porte Médio</div>
-                <div *ngIf="item.adocaoPorte == 'g'">Porte Grande</div>
-    
-                <p>
-                    {{item.adocaoLocal}}
-                </p>
-            
-                <div *ngIf="item.adocaoVacinacao == true">Vacinado</div>
-                <div *ngIf="item.adocaoVacinacao == false">Não Vacinado</div>
-                <p>
-                    {{item.adocaoDetalhes}}
-                    <img clas="img-fluid"src={{item.adocaoFoto}} alt="">
-                </p>
+    <div class="col-md-2">
+        <div *ngFor="let item of animal">
+            <div class="card listaAdocao" style="width: 35rem;">
+                <img class="card-img-top" src="{{item.adocaoFoto}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.adocaoNome}}</h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong> Tipo: </strong>{{item.adocaoTipo}}
+                    </li>
+                    <li class="list-group-item"><strong> Raça: </strong>{{item.adocaoRaca}}</li>
+                    <li class="list-group-item"><strong> Porte: </strong>
+                        <div *ngIf="item.adocaoPorte == 'p'">Pequeno Porte</div>
+                        <div *ngIf="item.adocaoPorte == 'm'">Porte Médio</div>
+                        <div *ngIf="item.adocaoPorte == 'g'">Porte Grande</div>
+                    </li>
+                    <li class="list-group-item"><strong> Vacinação: </strong>
+                        <div *ngIf="item.adocaoVacinacao == true">Vacinado</div>
+                        <div *ngIf="item.adocaoVacinacao == false">Não Vacinado</div>
+                    </li>
+                    <li class="list-group-item"> <strong> Local: </strong>{{item.adocaoLocal}}</li>
+                    <li class="list-group-item"><strong> Detalhes: </strong> {{item.adocaoDetalhes}}</li>
+                </ul>
             </div>
-    
+            <div class="col-md-10"></div>
         </div>
     </div>
-
-
-<!--
-
-    <section class="details-card" *ngFor="let item of animal">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                        <div class="col-md-4">
-                        </div>
-                    <div class="col-md-4">
-                        <div class="card-content" >
-                            <div class="card-img">
-                                <img clas="img-fluid"src={{item.adocaoFoto}} alt="">
-                                <span><h4>heading</h4></span>
-                            </div>
-                            <div class="card-desc">
-                                <h3>{{item.adocaoNome}}</h3>
-                                <p>{{item.adocaoTipo}}</p>
-                                <p>{{item.adocaoRaca}}</p>
-                                <p>{{item.adocaoPorte}}</p>
-                                <p>{{item.adocaoLocal}}</p>
-                                <p>{{item.adocaoVacinacao}}</p>
-                                <p>{{item.adocaoDetalhes}}</p> 
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                       
-                    </div>
-                </div>
-            </div>
-        </section>
-    -->
-      
+</div>

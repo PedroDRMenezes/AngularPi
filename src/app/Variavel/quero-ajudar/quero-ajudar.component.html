@@ -2,34 +2,42 @@
 
     <div class="row" id="queroAjudar">
         <div class="col-md-6" id="testeira">
-            <img src="../../../assets/imagens/peixes.gif" class="img-fluid peixe"
-                alt="">
+            <img src="../../../assets/imagens/peixes.gif" class="img-fluid peixe" alt="">
         </div>
         <div class="col-md-6 descricaoSite">
             <div class="row">
                 <h1 class="tituloQueroAjudar">Quero Ajudar</h1>
-                <p class= "ajuda">A Safe Pet tem como objetivo arrrecadar recursos financeiros, visando manter os animais até eles serem adotados.
-                Você pode contribuir conforme suas possibilidades.
+                <p class="ajuda">A Safe Pet tem como objetivo arrrecadar recursos financeiros, visando manter os animais
+                    até eles serem adotados.
+                    Você pode contribuir conforme suas possibilidades.
                 </p>
             </div>
         </div>
-    
+
     </div>
 
 
 
     <div class="row">
         <!-- Faça a sua doação -->
-        <div class="col-md-6">
-            <input type="text" class="doacao" [(ngModel)]="valorArrecadado" placeholder="Ex: R$ 100,00">
-            <button class="btn btn-doacao" (click)="doacao();">Doar</button>
+        <div class="col-md-6" id="doar">
+            <div class="card text-center">
+                <div class="card-header">
+                    <strong> Digite um Valor </strong>
+                </div>
+                <div class="card-body" id="doado">
+                    <input type="text" class="doacao" [(ngModel)]="valorArrecadado" placeholder="Ex: R$ 100,00">
+                    <button class="btn btn-doacao" (click)="doacao();">Doar</button>
+                </div>
+            </div>
         </div>
+        
 
         <!-- Valor Arrecadado -->
         <div class="col-md-6" id="arrecadado">
             <div class="card text-center">
                 <div class="card-header">
-                    Valor Arrecadado
+                    <strong> Valor Arrecadado </strong>
                 </div>
                 <div class="card-body">
                     <p class="card-text">R$: {{valorTotal}},00</p>

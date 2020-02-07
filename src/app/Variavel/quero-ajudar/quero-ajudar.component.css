@@ -4,7 +4,8 @@
 
   }
 .descricaoSite {
-margin-top: 80px;
+margin-top: 100px;
+
 }
 
 .imgback {
@@ -26,24 +27,17 @@ margin-top: 80px;
     text-align: center;
     font-size: 305%;
     margin-top: 2%;
-    text-shadow: 2px 2px 5px #758582;
-    width: 1300px;
-    height: 50px;
-    position: relative;
-    animation: mymoveQueroAjudar 2s;
-    }
+    margin-left: 135px;
+}
+  
 
-
-@keyframes mymoveQueroAjudar {
-    0% {left:0px; color:#39829b; width: 380px;}
-    100% {left: 100px; color: white; width: 780px;}
-  }
   
 
 .btn-doacao {
     background-color: white; 
     color: black; 
     border: 2px solid rgba(95, 193, 238, 0.753);
+    padding: 3px;
   }
   
 .btn-doacao:hover {
@@ -52,21 +46,37 @@ margin-top: 80px;
   }
 
   .doacao {
-      margin-top: 50px;
+      margin-top: 0px;
       margin-right: 20px;
       width: 200px;
       margin-left:100px ;
-     
+
   }
+
+  #doar{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 200px;
+
+  }
+
+  #dodado {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 200px;
+    height: 50px;
+  }
+  
 
   #arrecadado {
     margin-top: 50px;
     margin-bottom: 50px;
+    height: 50px;
 
   }
 
   .card-header {
-      background-color: rgb(248, 127, 46);
+      background-color: rgb(187, 232, 238);
   }
 
   .card-text {
@@ -85,3 +95,15 @@ margin-top: 80px;
       margin-top: 25px;
   }
 
+.peixe {
+    padding: 0px;
+    opacity: 0.5;
+}
+
+#testeira {
+    padding: 0px;
+}
+
+.col-md-12 {
+    padding: 0px;
+}

@@ -1,32 +1,80 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="bg-text">
-            <h1>Safe Pet</h1>
-            <p>A.N.I.+ (ADOÇÃO - NOVIDADE - IMPACTO)</p>
-        </div>
+<div class="container-fluid">
 
         <div class="row">
-            <div class="col-md-12">
-                <img class="fotoTopo" src="../../../assets/imagens/dogcat.jfif" alt="Um cão e um gato juntos">
+    
+            <div class="flip-card center">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front col-md-12 p-0 ">
+                        <img class="fotoPerfil p-0 img-fluid " height="300px" width="300px" src="{{ this.usuario.foto }}"
+                            alt="">
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>{{this.usuario.nome}}</h1>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-12 p-0 fotoTopo">
+                <img class="w-100" src="../../../assets/imagens/dogcat.jfif" alt="Um cão e um gato juntos">
             </div>
         </div>
-    </div>
-</div>
-
-<!--Conteudo-->
-<div *ngFor="let item of post">
-    <div class="card mt-3">
-        <div class="card-header " id="testeira">
+    
+        <!--Conteudo-->
+    
+    
+        <!--div class="row">
+                    <div class="col-md-12 p-0">
+                        
+                        <div class="col-md-12 p-0 tm fotoTopo d-flex justify-content-center">
+                                <img class="" src="../../../assets/imagens/dogcat.jfif" width="100%" height="100%" alt="Um cão e um gato juntos">
+                        </div>
+                    </div>
+                    
+                        
+                </div-->
+    
+    
+    
+        <!--Conteudo-->
+        <div class="container mt-5 mb-5">
             <div class="row">
-                <div class="col-md-12 postTexto btn-group">
-                    <h3>{{this.usuario.nome}}</h3>
+                <div class="col-md-12">
+                    <div *ngFor="let item of posts">
+                        <div class="card mt-3">
+                            <div class="card-header bg-azulClaro textoPadrao" id="">
+                                <div class="row">
+                                    <div class="col-md-12 postTexto btn-group d-flex align-items-center">
+                                        <img src="{{this.usuario.foto}}" class="rounded-circle mr-3 border border-primary"
+                                            width="50" height="50" alt="">
+                                        <h3> {{this.usuario.nome}} </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card-body">
+                                    <p class="card-text ml-4">{{item.postConteudo}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="card-body">
-                <p class="card-text">{{item.postConteudo}}</p>
+    </div>
+    
+    <div *ngFor="let item of post">
+        <div class="card mt-3">
+            <div class="card-header " id="testeira">
+                <div class="row">
+                    <div class="col-md-12 postTexto btn-group">
+                        <h3>{{this.usuario.nome}}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card-body">
+                    <p class="card-text">{{item.postConteudo}}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>

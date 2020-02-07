@@ -92,11 +92,21 @@ section{
     word-wrap: break-word;
     color: #fff;
 }
-.btn-card:hover {
+/*.btn-card:hover {
     background: orange;
-}
+}*/
 a.btn-card {
     text-decoration: none;
     color: #fff;
 }
 /* End card section */
+
+.listaAdocao {
+    margin-left: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+  
+
+ 
+}
