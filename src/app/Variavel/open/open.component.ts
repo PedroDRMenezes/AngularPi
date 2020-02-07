@@ -16,7 +16,7 @@ export class OpenComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   public usuario: Usuario = new Usuario();
   public valida: number = 0;
   private nome: string;
@@ -32,7 +32,8 @@ export class OpenComponent implements OnInit {
   private erroNum: string;
   private erroSenha: string;
   private erroCSenha: string;
-  
+  private linkImg: String = null;
+
   validacao() {
     if (this.nome.length == 0) {
       this.erroNome = "Nome Inválido";
@@ -49,7 +50,7 @@ export class OpenComponent implements OnInit {
       this.erroEmail = null;
     }
 
-    if (this.numero == null || this.numero.length < 10 || this.numero.length > 11 || !this.num.test(this.numero)) {
+    if (this.numero == null || this.numero.length < 10 || this.numero.length > 12 || !this.num.test(this.numero)) {
       this.erroNum = "Telefone Inválido";
     }
     else {
@@ -97,7 +98,7 @@ export class OpenComponent implements OnInit {
       this.erroSenha = "Digite uma senha";
     }
   }
-  
+
   validacao2() {
 
     if (this.nome == null) {
@@ -188,19 +189,24 @@ export class OpenComponent implements OnInit {
       this.valida = 0;
     }
   }
-  
+
   enviarDados() {
     console.log(this.usuario)
     this.usuario.nomeDeUsuario = this.usuario.nome;
-    this.usuario.foto = "https://image.freepik.com/vetores-gratis/usuarios-do-sistema-de-tango_17-329084610.jpg";
+    this.usuario.foto = this.linkImg;
+    if (this.linkImg == null) {
+      this.usuario.foto = "https://image.freepik.com/vetores-gratis/usuarios-do-sistema-de-tango_17-329084610.jpg";
+    }else{
+    }
     this.srv.adicionaUser(this.usuario).subscribe(
       res => {
         console.log(res)
-        console.log("inserido com sucesso")
+        alert("inserido com sucesso")
       },
       err => {
         console.log(err)
         alert("erro ao inserir")
+        window.location.reload();
       }
     )
   }
