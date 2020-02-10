@@ -8,7 +8,7 @@ import { NovoPost } from '../model/novoPost';
 })
 export class PublicacoesService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   getAll() {
     return this.http.get("http://safepet.tech:8080/post")

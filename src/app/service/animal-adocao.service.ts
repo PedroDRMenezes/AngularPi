@@ -7,7 +7,7 @@ import { AnimalAdocao } from '../model/animalAdocao';
 })
 export class AnimalAdocaoService {
 
-  constructor(private http: HttpClient) {}
+  constructor(public http: HttpClient) {}
   
     public getAnimalAll() {
       return this.http.get("http://safepet.tech:8080/animalAdocao");

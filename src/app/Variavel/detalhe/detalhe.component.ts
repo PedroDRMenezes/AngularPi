@@ -11,9 +11,9 @@ import { Usuario } from 'src/app/model/usuario';
 export class DetalheComponent implements OnInit {
   
   public usuario:Usuario = new Usuario();
-  private id: number;
+  public id: number;
   
-  constructor(private rota : ActivatedRoute, private srv:UsuarioService) { }
+  constructor(public rota : ActivatedRoute, public srv:UsuarioService) { }
 
   ngOnInit() {
     this.id = this.rota.snapshot.params["id"];

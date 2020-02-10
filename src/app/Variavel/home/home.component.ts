@@ -17,10 +17,10 @@ import { MeuAniService } from 'src/app/service/meu-ani.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private PublicacoesService: PublicacoesService,
-              private router: Router,
-              private userService: UsuarioService,
-              private meuAniService: MeuAniService) { }
+  constructor(public PublicacoesService: PublicacoesService,
+              public router: Router,
+              public userService: UsuarioService,
+              public meuAniService: MeuAniService) { }
 
   public id: number = 1;
   public posts: Post[];

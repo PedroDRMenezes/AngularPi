@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MeuAniService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   public getAllMeuAnimal() {
     return this.http.get("http://safepet.tech:8080/meuAnimal")

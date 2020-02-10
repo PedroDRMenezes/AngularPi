@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../model/post';
-import { PublicacoesService } from '../../service/publicacoes.service';
+
 
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario';
@@ -18,8 +18,8 @@ export class PostagemIdComponent implements OnInit {
   
   usuario:Usuario= new Usuario();
   constructor(
-              private router: Router,
-              private userService:UsuarioService) { }
+              public router: Router,
+              public userService:UsuarioService) { }
 
   ngOnInit() {
     console.log("Estou no BuscaId");

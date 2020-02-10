@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QueroAjudarComponent implements OnInit {
 
-  private valorArrecadado: number;
-  private valorTotal: number = 1000;
+  public valorArrecadado: number;
+  public valorTotal: number = 1000;
 
   constructor() { }
 

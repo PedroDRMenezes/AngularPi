@@ -3,7 +3,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { Router } from '@angular/router';
 import { global } from 'src/app/model/global';
-import * as $ from 'jquery';
+
 @Component({
   selector: 'app-open',
   templateUrl: './open.component.html',
@@ -12,27 +12,27 @@ import * as $ from 'jquery';
 })
 export class OpenComponent implements OnInit {
 
-  constructor(private srv: UsuarioService, private router: Router) { }
+  constructor(public srv: UsuarioService, public router: Router) { }
 
   ngOnInit() {
   }
 
   public usuario: Usuario = new Usuario();
   public valida: number = 0;
-  private nome: string;
-  private email: string;
-  private numero: string;
-  private num: any = /^[0-9]+$/;
-  private senha: string;
-  private senhaFraca: string;
-  private senhaForte: string;
-  private cSenha: string;
-  private erroNome: string;
-  private erroEmail: string;
-  private erroNum: string;
-  private erroSenha: string;
-  private erroCSenha: string;
-  private linkImg: String = null;
+  public nome: string;
+  public email: string;
+  public numero: string;
+  public num: any = /^[0-9]+$/;
+  public senha: string;
+  public senhaFraca: string;
+  public senhaForte: string;
+  public cSenha: string;
+  public erroNome: string;
+  public erroEmail: string;
+  public erroNum: string;
+  public erroSenha: string;
+  public erroCSenha: string;
+  public linkImg: String = null;
 
   validacao() {
     if (this.nome.length == 0) {

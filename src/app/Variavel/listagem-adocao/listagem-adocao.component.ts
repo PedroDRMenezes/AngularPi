@@ -16,9 +16,9 @@ export class ListagemAdocaoComponent implements OnInit {
 
   animal: AnimalAdocao[];
 
-  constructor(private anima: AnimalAdocaoService,
-    private router: Router,
-    private userService: UsuarioService) { }
+  constructor(public anima: AnimalAdocaoService,
+    public router: Router,
+    public userService: UsuarioService) { }
 
   ngOnInit() {
     console.log("Estou na listagem  ");

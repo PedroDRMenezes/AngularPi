@@ -12,11 +12,9 @@ import { FormularioComponent } from './Variavel/formulario/formulario.component'
 import { HomeComponent } from './Variavel/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostagemIdComponent } from './Variavel/postagem-id/postagem-id.component';
-import { ConfiguracoesComponent } from './variavel/configuracoes/configuracoes.component';
 import { DetalheComponent } from './variavel/detalhe/detalhe.component';
 import { OpenComponent } from './variavel/open/open.component';
 import { CentralAjudaComponent } from './variavel/central-ajuda/central-ajuda.component';
-import { AtualizaPostComponent } from './variavel/atualiza-post/atualiza-post.component';
 import { QueroAjudarComponent } from './Variavel/quero-ajudar/quero-ajudar.component';
 import { ListagemAdocaoComponent } from './Variavel/listagem-adocao/listagem-adocao.component';
 
@@ -30,11 +28,9 @@ import { ListagemAdocaoComponent } from './Variavel/listagem-adocao/listagem-ado
     FormularioComponent,
     HomeComponent,
     PostagemIdComponent,
-    ConfiguracoesComponent,
     DetalheComponent,
     OpenComponent,
     CentralAjudaComponent,
-    AtualizaPostComponent,
     QueroAjudarComponent,
     ListagemAdocaoComponent
   ],

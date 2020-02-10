@@ -5,7 +5,7 @@ import { AnimalAdocao } from 'src/app/model/animalAdocao';
 import { Usuario } from 'src/app/model/usuario';
 import { global } from 'src/app/model/global';
 import { UsuarioService } from 'src/app/service/usuario.service';
-import { stringify } from 'querystring';
+
 
 @Component({
   selector: 'app-formulario',
@@ -16,29 +16,29 @@ import { stringify } from 'querystring';
 export class FormularioComponent implements OnInit {
   
   public animalAdocao: AnimalAdocao = new AnimalAdocao();
-  private tipo: string;
-  private porte: string;
-  private local: string;
-  private detalhes: string;
+  public tipo: string;
+  public porte: string;
+  public local: string;
+  public detalhes: string;
   public id: number;
   public nome: string;
   public raca: string;
   public vacinacao: boolean;
   public foto: string;
-  private erroNome: string;
-  private erroTipo: string;
-  private erroPorte: string;
-  private erroLocal: string;
-  private erroDetalhes: string;
-  private erroFoto:string;
-  private erroRaca:string;
-  private cont: number=0;
+  public erroNome: string;
+  public erroTipo: string;
+  public erroPorte: string;
+  public erroLocal: string;
+  public erroDetalhes: string;
+  public erroFoto:string;
+  public erroRaca:string;
+  public cont: number=0;
   public usuario: Usuario
-  private vacina : string;
-private erroVacinacao:string;
-  constructor(private srv: AnimalAdocaoService,
-               private router: Router,
-               private userService: UsuarioService) { }
+  public vacina : string;
+public erroVacinacao:string;
+  constructor(public srv: AnimalAdocaoService,
+               public router: Router,
+               public userService: UsuarioService) { }
 
   ngOnInit() {
     console.log("Estou na home  ");

@@ -14,16 +14,16 @@ import { Token } from 'src/app/model/token';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private srv: UsuarioService, private router: Router, private userService: UsuarioService) { }
+  constructor(public srv: UsuarioService, public router: Router, public userService: UsuarioService) { }
 
 
-  private emailLogin: string;
-  private senhaLogin: string;
+  public emailLogin: string;
+  public senhaLogin: string;
 
   public condition: number = 1;
   public ID: number = 0;
   public usuario: Usuario = new Usuario();
-  private valida: number = 0;
+  public valida: number = 0;
 
   ngOnInit() {
     console.log("Estou na navBar");

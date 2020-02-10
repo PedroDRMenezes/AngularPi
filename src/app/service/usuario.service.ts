@@ -8,7 +8,7 @@ import { Usuario } from '../model/usuario';
 })
 export class UsuarioService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
 
   public getUserAll() {
     return this.http.get("http://safepet.tech:8080/usuario")
